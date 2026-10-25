@@ -3,7 +3,7 @@
 Search Qwen3.5-4B FFN channels with a project-owned, instrumented **llama-server**. The search profiles contrastive text, ranks channels, sweeps additive steering doses, and evaluates the best tuning result on held-out prompts against an unsteered baseline and random-neuron controls.
 
 ```sh
-# Prerequisites: git, cmake, a C++ compiler, curl, Python 3.10+, and uv.
+# Prerequisites: git, cmake, a C++ compiler, curl, Python 3.12+, and uv.
 # Downloads a 4.2 GiB Q8_0 GGUF and builds llama-server (Metal on macOS).
 scripts/setup
 ./find_neuron --model qwen-4B --topic gpu

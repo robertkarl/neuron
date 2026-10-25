@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 import json
+import platform
 from pathlib import Path
 import re
 import subprocess
@@ -111,7 +112,9 @@ def main(argv=None):
     output = args.output or ROOT / 'runs' / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ')
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
-    report = dict(status='running', build=build, model=lock, model_sha256=model_sha, upstream_revision=revision,
+    report = dict(status='running', build=build,
+                  environment=dict(python=sys.version, numpy=np.__version__, platform=platform.platform()),
+                  source_sha256={str(p.relative_to(ROOT)): digest(p) for p in sorted((ROOT / 'neuron').glob('*.py'))}, model=lock, model_sha256=model_sha, upstream_revision=revision,
                   hook_sha256=digest(ROOT / 'backend/neuron-hook.h'),
                   patch_sha256=digest(ROOT / 'patches/llama-server-neuron.patch'),
                   binary_sha256=digest(ROOT / 'vendor/llama.cpp/build/bin/llama-server'),

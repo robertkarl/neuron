@@ -8,6 +8,9 @@ import shutil
 import subprocess
 import sys
 
+if sys.version_info < (3, 12):
+    sys.exit('scripts/setup requires Python 3.12 or newer')
+
 ROOT = Path(__file__).resolve().parents[1]
 os.chdir(ROOT)
 
@@ -28,7 +31,7 @@ actual_diff = subprocess.check_output(['git', '-C', str(source), 'diff', 'HEAD',
 if actual_diff != Path(patch).read_text():
     sys.exit('Unexpected local llama.cpp changes; inspect before rebuilding')
 shutil.copyfile(ROOT / 'backend/neuron-hook.h', source / 'tools/server/neuron-hook.h')
-run('uv', 'venv', '--allow-existing', '.venv')
+run('uv', 'venv', '--python', '3.13', '--allow-existing', '.venv')
 run('uv', 'pip', 'install', 'numpy==2.5.4', './vendor/llama.cpp/gguf-py')
 run('cmake', '-S', str(source), '-B', str(source / 'build'), '-DCMAKE_BUILD_TYPE=Release',
     '-DLLAMA_BUILD_TESTS=OFF', '-DLLAMA_BUILD_EXAMPLES=OFF', '-DLLAMA_BUILD_UI=OFF')
