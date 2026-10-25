@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+"""Build the pinned research server and download the pinned model."""
+import hashlib
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+os.chdir(ROOT)
+
+def run(*args):
+    subprocess.run(args, check=True)
+
+lock = json.loads((ROOT / 'models.lock.json').read_text())
+run('git', 'submodule', 'update', '--init', 'vendor/llama.cpp')
+source = ROOT / 'vendor/llama.cpp'
+revision = subprocess.check_output(['git', '-C', str(source), 'rev-parse', 'HEAD'], text=True).strip()
+if revision != lock['llama_revision']:
+    sys.exit('llama.cpp revision differs from models.lock.json')
+patch = str(ROOT / 'patches/llama-server-neuron.patch')
+if subprocess.run(['git', '-C', str(source), 'apply', '--reverse', '--check', patch], capture_output=True).returncode:
+    run('git', '-C', str(source), 'apply', '--check', patch)
+    run('git', '-C', str(source), 'apply', patch)
+shutil.copyfile(ROOT / 'backend/neuron-hook.h', source / 'tools/server/neuron-hook.h')
+run('uv', 'venv', '--allow-existing', '.venv')
+run('uv', 'pip', 'install', 'numpy==2.5.4', './vendor/llama.cpp/gguf-py')
+run('cmake', '-S', str(source), '-B', str(source / 'build'), '-DCMAKE_BUILD_TYPE=Release',
+    '-DLLAMA_BUILD_TESTS=OFF', '-DLLAMA_BUILD_EXAMPLES=OFF', '-DLLAMA_BUILD_UI=OFF')
+run('cmake', '--build', str(source / 'build'), '--target', 'llama-server', '-j', str(min(os.cpu_count() or 4, 10)))
+model = ROOT / 'models' / lock['filename']
+model.parent.mkdir(exist_ok=True)
+if not model.exists():
+    temp = str(model) + '.part'
+    run('curl', '-fL', '--retry', '3', '-o', temp,
+        f"https://huggingface.co/{lock['repo']}/resolve/{lock['revision']}/{lock['filename']}")
+    os.replace(temp, model)
+with model.open('rb') as f:
+    actual = hashlib.file_digest(f, 'sha256').hexdigest()
+if actual != lock['sha256']:
+    sys.exit('Model checksum mismatch; remove or replace the GGUF and retry')
+def sha(path):
+    with Path(path).open('rb') as f:
+        return hashlib.file_digest(f, 'sha256').hexdigest()
+
+manifest = dict(upstream=revision, hook=sha('backend/neuron-hook.h'), patch=sha(patch),
+                binaries={p.name: sha(p) for p in (source / 'build/bin').iterdir()
+                          if p.is_file() and (p.name == 'llama-server' or p.suffix in ('.so', '.dylib', '.dll'))})
+(source / 'build/neuron-build.json').write_text(json.dumps(manifest, indent=2) + '\n')
+print('Ready: ./find_neuron --model qwen-4B --topic gpu')

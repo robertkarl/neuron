@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+"""Real-model integration check; run with .venv/bin/python scripts/check_hook."""
+import json
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from neuron.backend import ROOT, Server, write_json
+
+out = ROOT / 'runs' / 'integration'
+lock = json.loads((ROOT / 'models.lock.json').read_text())
+prompt = 'Name an interesting piece of technology and briefly explain it.'
+with Server(ROOT / 'models' / lock['filename'], out) as s:
+    baseline, (means, norms, _) = s.complete(prompt, trace=True, tokens=1, temperature=0)
+    zero, _ = s.complete(prompt, steering=[dict(layer=14, neuron=8949, alpha=0)], tokens=1, temperature=0)
+    changed, (_, _, applied) = s.complete(prompt, steering=[dict(layer=14, neuron=8949, alpha=5)], tokens=1, temperature=0)
+    reset, _ = s.complete(prompt, tokens=1, temperature=0)
+    assert baseline['tokens'] == zero['tokens'] == reset['tokens']
+    assert baseline['completion_probabilities'] == zero['completion_probabilities'] == reset['completion_probabilities'], 'baseline logits did not reset'
+    assert changed.get('completion_probabilities') != baseline['completion_probabilities'], 'steering did not affect logits'
+    assert len(means) == len(norms) == 31 and all(x.shape == (9216,) for x in means.values())
+    assert all(len(v) == baseline['tokens_evaluated'] - 1 for v in norms.values())
+    _, (_, _, decode_applied) = s.complete(prompt, steering=[dict(layer=14, neuron=8949, alpha=1)], tokens=8, temperature=0)
+    assert any(x['count'] == 1 for x in decode_applied), 'no generation-token intervention'
+    result = dict(status='pass', layers=len(means), width=9216,
+                  zero_dose_exact=True, reset_exact=True, steering_changes_logits=True,
+                  prefill_and_decode=True, excluded_first_token=True,
+                  model=lock, intervention=applied, backend='default GPU offload')
+    write_json(out / 'result.json', result)
+    print(json.dumps(result, indent=2))

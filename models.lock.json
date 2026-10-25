@@ -1,0 +1,8 @@
+{
+  "alias": "qwen-4B",
+  "repo": "unsloth/Qwen3.5-4B-GGUF",
+  "revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+  "filename": "Qwen3.5-4B-Q8_0.gguf",
+  "sha256": "10cc391b403021dd11c614679d2fd92f611c3681d29e29651b717316965d61e1",
+  "llama_revision": "6050b467c07a95c7b87debd4ddac2f8ba8d9b807"
+}

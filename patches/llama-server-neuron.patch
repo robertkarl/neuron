@@ -1,0 +1,64 @@
+diff --git a/tools/server/server-context.cpp b/tools/server/server-context.cpp
+index a5cba1d71..4233fd136 100644
+--- a/tools/server/server-context.cpp
++++ b/tools/server/server-context.cpp
+@@ -1,3 +1,4 @@
++#include "neuron-hook.h"
+ #include "server-context.h"
+ #include <atomic>
+ #include <thread>
+@@ -1185,6 +1186,8 @@ private:
+ 
+     // load the model and initialize llama_context
+     // this may also be called to resume from sleeping state
++    neuron_hook neuron;
++
+     bool load_model(common_params & params) {
+         load_progress_data load_progress_text  (this, "text_model");
+         load_progress_data load_progress_mmproj(this, "mmproj_model");
+@@ -1193,6 +1196,16 @@ private:
+         const bool is_resume = sleeping;
+ 
+         params_base = params;
++        neuron.configure(std::getenv("NEURON_CONFIG"));
++        if (neuron.enabled()) {
++            if (params.n_parallel != 1 || params.speculative.has_dft() || !params.mmproj.path.empty()) {
++                throw std::runtime_error("neuron hook requires one slot, no draft model, and text-only input");
++            }
++            params_base.cb_eval = neuron_hook::eval;
++            params_base.cb_eval_user_data = &neuron;
++            params_base.warmup = false;
++        }
++
+         const auto output_limits = server_output_limits(params_base);
+         params_base.n_outputs_max = output_limits.total;
+         params_base.n_outputs_max_per_seq = output_limits.per_seq;
+@@ -1302,6 +1315,15 @@ private:
+             return false;
+         }
+ 
++        if (neuron.enabled()) {
++            char architecture[64] = {};
++            llama_model_meta_val_str(model_tgt, "general.architecture", architecture, sizeof(architecture));
++            if (std::string(architecture) != "qwen35" || llama_model_n_layer(model_tgt) != 32 ||
++                    llama_model_n_embd(model_tgt) != 2560 || has_spec) {
++                throw std::runtime_error("neuron hook supports Qwen3.5-4B without speculative decoding only");
++            }
++        }
++
+         vocab = llama_model_get_vocab(model_tgt);
+ 
+         try {
+@@ -1925,6 +1947,12 @@ private:
+     }
+ 
+     bool launch_slot_with_task(server_slot & slot, server_task && task) {
++        if (neuron.enabled()) {
++            neuron.begin();
++            task.params.cache_prompt = false;
++            slot.prompt.clear();
++        }
++
+         // process per-request lora adapters
+         if (!task.params.lora.empty()) {
+             auto task_loras = construct_lora_list(task.params.lora);
