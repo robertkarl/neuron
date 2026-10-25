@@ -51,7 +51,7 @@ def write_json(path, value):
     temp.replace(path)
 
 
-def read_trace(path):
+def read_trace(path, logprobs=None):
     """Read version 1 little-endian records; reject partial or invalid output."""
     means, counts, norms, interventions = {}, {}, {}, []
     with open(path, 'rb') as f:
@@ -63,7 +63,7 @@ def read_trace(path):
             kind, layer, width, count = struct.unpack('<4I', header)
             if layer >= 32 or not 0 < count <= 8192:
                 raise ValueError('invalid trace dimensions')
-            if (kind, width) not in ((1, 9216), (2, 1), (3, 3)):
+            if (kind, width) not in ((1, 9216), (2, 1), (3, 3)) and not (kind == 4 and count == 1 and 2 <= width <= 512 and width % 2 == 0):
                 raise ValueError('unknown trace kind or width')
             size = count if kind == 2 else width
             data = f.read(size * 4)
@@ -77,6 +77,12 @@ def read_trace(path):
                 counts[layer] = counts.get(layer, 0) + count
             elif kind == 2:
                 norms.setdefault(layer, []).extend(values.tolist())
+            elif kind == 4:
+                pairs = values.reshape(-1, 2)
+                if not all(0 <= t < 248320 and t == int(t) and p <= 1e-5 for t, p in pairs):
+                    raise ValueError('invalid token log probabilities')
+                if logprobs is not None:
+                    logprobs.append({int(t): float(p) for t, p in pairs})
             else:
                 interventions.append(dict(layer=layer, neuron=int(values[0]),
                                           before=float(values[1]), after=float(values[2]), count=count))
@@ -150,16 +156,18 @@ class Server:
                 raise urllib.error.URLError('loading') from error
             raise RuntimeError(f'llama-server HTTP {error.code}: {error.read().decode()}') from error
 
-    def complete(self, prompt, *, steering=(), trace=False, seed=42, temperature=0.7, tokens=64):
+    def complete(self, prompt, *, steering=(), trace=False, seed=42, temperature=0.7, tokens=64, logit_tokens=(), assistant_prefix=""):
+        if len(logit_tokens) > 256 or any(not isinstance(t, int) or not 0 <= t < 248320 for t in logit_tokens):
+            raise ValueError("invalid probe tokens")
         for item in steering:
             if not (0 <= item['layer'] < 32 and 0 <= item['neuron'] < 9216
                     and np.isfinite(item['alpha'])):
                 raise ValueError('invalid intervention')
-        write_json(self.config, dict(trace=trace, steering=list(steering)))
+        write_json(self.config, dict(trace=trace, steering=list(steering), logit_tokens=list(logit_tokens)))
         self.trace.unlink(missing_ok=True)
         # Explicit empty thinking block makes completion sampling comparable across conditions.
         formatted = ('<|im_start|>user\n' + prompt + '<|im_end|>\n'
-                     '<|im_start|>assistant\n<think>\n\n</think>\n\n')
+                     '<|im_start|>assistant\n<think>\n\n</think>\n\n' + assistant_prefix)
         body = dict(prompt=formatted, n_predict=tokens, temperature=temperature,
                     seed=seed, top_k=40, top_p=0.95, min_p=0.05,
                     cache_prompt=False, return_tokens=True, n_probs=5,
@@ -167,8 +175,13 @@ class Server:
         response = self.http('/completion', body)
         if response.get('truncated'):
             raise RuntimeError('prompt was truncated')
-        parsed = read_trace(self.trace)
-        if trace and (set(parsed[0]) != set(range(31)) or set(parsed[1]) != set(range(31))):
+        logprobs = []
+        parsed = read_trace(self.trace, logprobs)
+        if logit_tokens:
+            if not logprobs or any(set(x) != set(logit_tokens) for x in logprobs):
+                raise RuntimeError("missing targeted log probabilities")
+            response["neuron_logprobs"] = logprobs
+        if trace and (set(parsed[0]) != set(range(31)) or set(parsed[1]) != set(range(32))):
             raise RuntimeError('incomplete activation trace; instrumentation is not working')
         for item in steering:
             records = [r for r in parsed[2] if r['layer'] == item['layer'] and r['neuron'] == item['neuron']]

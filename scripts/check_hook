@@ -18,8 +18,8 @@ with Server(ROOT / 'models' / lock['filename'], out) as s:
     assert baseline['tokens'] == zero['tokens'] == reset['tokens']
     assert baseline['completion_probabilities'] == zero['completion_probabilities'] == reset['completion_probabilities'], 'baseline logits did not reset'
     assert changed.get('completion_probabilities') != baseline['completion_probabilities'], 'steering did not affect logits'
-    assert len(means) == len(norms) == 31 and all(x.shape == (9216,) for x in means.values())
-    assert all(len(v) == baseline['tokens_evaluated'] - 1 for v in norms.values())
+    assert len(means) == 31 and len(norms) == 32 and all(x.shape == (9216,) for x in means.values())
+    assert all(len(v) == baseline['tokens_evaluated'] - 1 for layer, v in norms.items() if layer < 31)
     _, (_, _, decode_applied) = s.complete(prompt, steering=[dict(layer=14, neuron=8949, alpha=1)], tokens=8, temperature=0)
     assert any(x['count'] == 1 for x in decode_applied), 'no generation-token intervention'
     result = dict(status='pass', layers=len(means), width=9216,

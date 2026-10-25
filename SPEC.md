@@ -15,3 +15,16 @@
 - [x] Work is committed in batches; review and test results are recorded before completion.
 
 Verified in docs/experiments/2026-10-25-gpu-first.md. Software acceptance is complete for this first iteration; the scientific GPU-neuron search returned no_evidence.
+
+## Spec, 2026-10-25, ten household-item neurons
+
+**Goal:** Find reproducible single-channel steering effects for ten common household items whose names are individual Qwen3.5-4B tokens. Continue search iterations until ten items pass the declared causal screen; distinguish token-selective steering from proof of a monosemantic concept.
+
+### Acceptance criteria
+
+- [ ] Verify and save token IDs by calling the actual model tokenizer, including bare and leading-space spellings.
+- [ ] Rank hypotheses using model weights and/or activations, then measure unmodified full-vocabulary next-token probabilities under actual single-neuron interventions in llama-server. No logit bias or forced target-token sampling is used to establish effects.
+- [ ] Each of ten distinct household items has a recorded layer, channel, sign, calibrated dose, and held-out probability increase over baseline and opposite-sign steering, with unrelated item tokens and random channels as controls.
+- [ ] Freeze candidate/dose selection before confirmation. Require target log-probability lift of at least 1 nat on at least 80% of held-out neutral prompts, median lift >= 1.5 nats, median lift at least 0.5 nats above the median competing-item lift, and median lift at least 0.5 nats above each of three same-layer random controls. Save failures as well as successes.
+- [ ] Record unconstrained generation examples and off-topic task checks for every accepted item, reporting limitations rather than equating token bias with semantic understanding.
+- [ ] Add tests for targeted probability extraction and acceptance rules, verify against native server probabilities, run /codereview, and commit implementation and evidence in batches.

@@ -2,6 +2,7 @@
 
 #include "ggml-backend.h"
 #include "json.h"
+#include <algorithm>
 #include <cmath>
 #include <cstdlib>
 #include <fstream>
@@ -14,6 +15,7 @@
 struct neuron_hook {
     std::string config_path;
     bool trace = false;
+    std::vector<int> logit_tokens;
     std::ofstream output;
     std::map<int, std::vector<std::pair<int, float>>> offsets;
     std::map<std::pair<int, int>, size_t> seen;
@@ -27,12 +29,20 @@ struct neuron_hook {
     void begin() {
         if (!enabled()) { return; }
         offsets.clear();
+        logit_tokens.clear();
         seen.clear();
         output.close();
         std::ifstream input(config_path);
         const std::string contents((std::istreambuf_iterator<char>(input)), std::istreambuf_iterator<char>());
         auto config = common_json::parse(contents);
         trace = config.at("trace").get<bool>();
+        if (config.contains("logit_tokens")) {
+            logit_tokens = config.at("logit_tokens").get<std::vector<int>>();
+            if (logit_tokens.size() > 256) { throw std::runtime_error("too many probe tokens"); }
+            for (int token : logit_tokens) {
+                if (token < 0 || token >= 248320) { throw std::runtime_error("invalid probe token"); }
+            }
+        }
         for (const auto & item : config.at("steering")) {
             int layer = item.at("layer").get<int>();
             int neuron = item.at("neuron").get<int>();
@@ -59,14 +69,35 @@ struct neuron_hook {
     static bool eval(ggml_tensor * tensor, bool ask, void * user_data) {
         auto & self = *static_cast<neuron_hook *>(user_data);
         if (!self.output.is_open()) { return ask ? false : true; }
+        if (ggml_nelements(tensor) == 0) { return ask ? false : true; }
         const std::string name(tensor->name);
+        if (name == "result_output" && !self.logit_tokens.empty()) {
+            if (ask) { return true; }
+            if (tensor->type != GGML_TYPE_F32 || !ggml_is_contiguous(tensor) || tensor->ne[0] != 248320 ||
+                    tensor->ne[1] < 1 || tensor->ne[2] != 1 || tensor->ne[3] != 1) {
+                throw std::runtime_error("unsupported logit tensor layout: " + std::to_string(tensor->type) + " " + std::to_string(tensor->ne[0]) + "x" + std::to_string(tensor->ne[1]) + "x" + std::to_string(tensor->ne[2]) + "x" + std::to_string(tensor->ne[3]) + " contiguous=" + std::to_string(ggml_is_contiguous(tensor)));
+            }
+            std::vector<float> logits(tensor->ne[0]);
+            ggml_backend_tensor_get(tensor, logits.data(), (tensor->ne[1] - 1) * tensor->nb[1], logits.size() * sizeof(float));
+            const double maximum = *std::max_element(logits.begin(), logits.end());
+            double total = 0;
+            for (float value : logits) { total += std::exp(double(value) - maximum); }
+            const double log_z = maximum + std::log(total);
+            std::vector<float> selected;
+            for (int token : self.logit_tokens) {
+                selected.push_back(float(token));
+                selected.push_back(float(logits[token] - log_z));
+            }
+            self.record(4, 0, selected.size(), 1, selected);
+            return true;
+        }
         int kind = 0;
         size_t prefix = 0;
         if (name.rfind("ffn_swiglu-", 0) == 0) { kind = 1; prefix = 11; }
         if (name.rfind("l_out-", 0) == 0) { kind = 2; prefix = 6; }
         if (!kind) { return ask ? false : true; }
         const int layer = std::stoi(name.substr(prefix));
-        const bool capture = self.trace && layer < 31;
+        const bool capture = self.trace && (layer < 31 || kind == 2);
         const bool steer = kind == 1 && self.offsets.count(layer);
         if (ask) { return capture || steer; }
         if (tensor->type != GGML_TYPE_F32 || !ggml_is_contiguous(tensor) || tensor->ne[2] != 1 || tensor->ne[3] != 1) {
@@ -77,7 +108,7 @@ struct neuron_hook {
         std::vector<float> values(width * count);
         ggml_backend_tensor_get(tensor, values.data(), 0, values.size() * sizeof(float));
         auto & seen = self.seen[{kind, layer}];
-        const size_t first = seen == 0 ? 1 : 0;
+        const size_t first = seen == 0 && layer < 31 ? 1 : 0;
         seen += count;
         if (capture && count > first) {
             std::vector<float> summary(kind == 1 ? width : count - first, 0.0f);
