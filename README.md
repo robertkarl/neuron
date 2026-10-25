@@ -9,7 +9,7 @@ scripts/setup
 ./find_neuron --model qwen-4B --topic gpu
 ```
 
-The model and upstream revision are pinned in [models.lock.json](models.lock.json). Setup checks the model SHA-256. Local llama.cpp changes are represented by [the patch](patches/llama-server-neuron.patch) and [the hook](backend/neuron-hook.h); the submodule deliberately stays at the upstream commit. Its working tree shows these applied changes after setup. Do not commit the patched submodule pointer.
+The model and upstream revision are pinned in [models.lock.json](models.lock.json). Setup creates a Python 3.13 virtual environment and checks the model SHA-256. Local llama.cpp changes are represented by [the patch](patches/llama-server-neuron.patch) and [the hook](backend/neuron-hook.h); the submodule deliberately stays at the upstream commit. Its working tree shows these applied changes after setup. Do not commit the patched submodule pointer.
 
 A shorter experiment:
 
@@ -53,3 +53,5 @@ Verification:
 ```
 
 See [SPEC.md](SPEC.md) for acceptance criteria and [docs/design.md](docs/design.md) for experimental choices. The current implementation is text-only, dense Qwen3.5-4B, single-process, and little-endian. It does not support MoE, speculative decoding, concurrent research requests, or a public neuron registry.
+
+The [first recorded GPU experiment](docs/experiments/2026-10-25-gpu-first.md) completed 294 requests and returned `no_evidence`.

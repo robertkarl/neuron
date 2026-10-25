@@ -1,0 +1,3303 @@
+{
+  "status": "no_evidence",
+  "build": {
+    "upstream": "6050b467c07a95c7b87debd4ddac2f8ba8d9b807",
+    "hook": "e809fa4eafb173b32e54f45dec4f8792fe5a65c14f5922e80734daa8cf8235bd",
+    "patch": "1400655f4d0e46838ed1a97e3c8518c7df75b8124c352cf6fcd83964a310194b",
+    "binaries": {
+      "libllama.0.7.0.dylib": "865aca612379ca89bdecee47afe048f20c0be8b8738c406c8f51881da217caaa",
+      "libmtmd.0.7.0.dylib": "be39640c562cac6fb09276457b37d575855d4e97858832f73a0785035030973c",
+      "libllama-common.0.7.0.dylib": "90a9f6077934dae22f44074983138f34725562164e5a3359d7793a45be307c22",
+      "libllama.0.dylib": "865aca612379ca89bdecee47afe048f20c0be8b8738c406c8f51881da217caaa",
+      "libmtmd.0.dylib": "be39640c562cac6fb09276457b37d575855d4e97858832f73a0785035030973c",
+      "libggml.dylib": "8042bbc415b0ae63fced46ee863b7d6bdc74ad0dc6143622771c8b8ebf0762fe",
+      "libggml.0.dylib": "8042bbc415b0ae63fced46ee863b7d6bdc74ad0dc6143622771c8b8ebf0762fe",
+      "libggml-cpu.0.27.0.dylib": "c6762c367f6a5e00e3dee46552eddd7033ac987afaeb99c12b5ba5d582dbcc6b",
+      "libggml.0.27.0.dylib": "8042bbc415b0ae63fced46ee863b7d6bdc74ad0dc6143622771c8b8ebf0762fe",
+      "libmtmd.dylib": "be39640c562cac6fb09276457b37d575855d4e97858832f73a0785035030973c",
+      "libllama-server-impl.dylib": "74feeb2c9c251332035d86c2650732c0c67e8906e5862956b9f98960f61dfd04",
+      "libggml-metal.0.27.0.dylib": "2af04f66b97711d43d41c6042657f7fbacadd228078f435899040984dc6bc02c",
+      "libggml-base.dylib": "01d2c2387869f426c28bf82f313dcb81b49b4fffb84acb018c4a67deb62b215b",
+      "libggml-blas.0.27.0.dylib": "3d27745be36a08626aab26ec1a8ca8cabff345cda10736f3ff95ac0511f3f172",
+      "libggml-blas.dylib": "3d27745be36a08626aab26ec1a8ca8cabff345cda10736f3ff95ac0511f3f172",
+      "libggml-metal.0.dylib": "2af04f66b97711d43d41c6042657f7fbacadd228078f435899040984dc6bc02c",
+      "libllama-common.0.dylib": "90a9f6077934dae22f44074983138f34725562164e5a3359d7793a45be307c22",
+      "libllama.dylib": "865aca612379ca89bdecee47afe048f20c0be8b8738c406c8f51881da217caaa",
+      "libggml-cpu.dylib": "c6762c367f6a5e00e3dee46552eddd7033ac987afaeb99c12b5ba5d582dbcc6b",
+      "libggml-base.0.27.0.dylib": "01d2c2387869f426c28bf82f313dcb81b49b4fffb84acb018c4a67deb62b215b",
+      "libggml-metal.dylib": "2af04f66b97711d43d41c6042657f7fbacadd228078f435899040984dc6bc02c",
+      "llama-server": "ecf790a1722554d7b1cb42dbe23cf0d139f91214d5f40303aec3b8381a87fad4",
+      "libllama-common.dylib": "90a9f6077934dae22f44074983138f34725562164e5a3359d7793a45be307c22",
+      "libggml-base.0.dylib": "01d2c2387869f426c28bf82f313dcb81b49b4fffb84acb018c4a67deb62b215b",
+      "libggml-blas.0.dylib": "3d27745be36a08626aab26ec1a8ca8cabff345cda10736f3ff95ac0511f3f172",
+      "libggml-cpu.0.dylib": "c6762c367f6a5e00e3dee46552eddd7033ac987afaeb99c12b5ba5d582dbcc6b"
+    }
+  },
+  "model": {
+    "alias": "qwen-4B",
+    "repo": "unsloth/Qwen3.5-4B-GGUF",
+    "revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "filename": "Qwen3.5-4B-Q8_0.gguf",
+    "sha256": "10cc391b403021dd11c614679d2fd92f611c3681d29e29651b717316965d61e1",
+    "llama_revision": "6050b467c07a95c7b87debd4ddac2f8ba8d9b807"
+  },
+  "model_sha256": "10cc391b403021dd11c614679d2fd92f611c3681d29e29651b717316965d61e1",
+  "upstream_revision": "6050b467c07a95c7b87debd4ddac2f8ba8d9b807",
+  "hook_sha256": "e809fa4eafb173b32e54f45dec4f8792fe5a65c14f5922e80734daa8cf8235bd",
+  "patch_sha256": "1400655f4d0e46838ed1a97e3c8518c7df75b8124c352cf6fcd83964a310194b",
+  "binary_sha256": "ecf790a1722554d7b1cb42dbe23cf0d139f91214d5f40303aec3b8381a87fad4",
+  "options": {
+    "model": "qwen-4B",
+    "topic": "gpu",
+    "dataset": null,
+    "candidates": 6,
+    "doses": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "seeds": [
+      42,
+      43
+    ],
+    "temperature": 0.7,
+    "max_tokens": 64,
+    "gpu_layers": 99,
+    "output": "runs/gpu-first"
+  },
+  "dataset": {
+    "topic": "gpu",
+    "positive": [
+      "A graphics processing unit executes many arithmetic operations in parallel. Thousands of small cores cooperate on rendering and numerical workloads.",
+      "Video memory stores textures and frame buffers close to the graphics processor. Its bandwidth often limits how fast a scene can be rendered.",
+      "CUDA kernels run across blocks of threads on an NVIDIA accelerator. Coalesced memory access helps keep the device busy.",
+      "Training a neural network uses graphics accelerators to multiply large matrices. Tensor cores speed up these calculations at reduced precision.",
+      "A gaming graphics card converts scene geometry into pixels. Rasterization and ray tracing determine what appears on the display.",
+      "The shader program executes for many vertices or fragments at once. Warps schedule groups of threads on a streaming multiprocessor.",
+      "An AMD Radeon board uses dedicated video RAM and compute units to draw frames. Driver software submits rendering commands to the device.",
+      "A parallel accelerator can outperform a general purpose processor on dense array arithmetic. Moving data across PCI Express can reduce that advantage."
+    ],
+    "negative": [
+      "A central processing unit executes program instructions. A few sophisticated cores handle branches and sequential work with low latency.",
+      "System memory stores active programs and working data close to the central processor. Its capacity limits how many applications can run together.",
+      "POSIX threads run across cores of a general purpose processor. Cache locality helps keep the computer busy while it executes a program.",
+      "Training a decision tree uses examples to choose rules. Branches divide the data into smaller groups according to feature values.",
+      "A gaming keyboard converts physical key presses into electronic signals. Switches and scanning circuits determine which key was pressed.",
+      "The database query executes for many records at once. A scheduler assigns groups of tasks to workers in a processing pool.",
+      "A network adapter uses packet buffers and controller logic to move data. Driver software submits transmission commands to the device.",
+      "A distributed cluster can outperform a single computer on independent tasks. Moving data across the network can reduce that advantage."
+    ],
+    "terms": [
+      "gpu",
+      "gpus",
+      "graphics card",
+      "graphics processor",
+      "graphics processing",
+      "cuda",
+      "vram",
+      "shader",
+      "shaders",
+      "ray tracing",
+      "tensor cores",
+      "nvidia",
+      "radeon"
+    ],
+    "tune": [
+      "Name a piece of technology you find interesting and explain what it does in two sentences.",
+      "Suggest a practical upgrade for a home office and explain your choice briefly.",
+      "Give one example of an invention that saves people time. Explain in two sentences."
+    ],
+    "heldout": [
+      "Write two sentences about a useful machine, choosing the machine yourself.",
+      "What is one device you would put in a small science exhibit? Explain briefly.",
+      "Recommend one tool for a person who enjoys making things and explain why.",
+      "Choose a modern invention and describe a limitation of it in two sentences."
+    ],
+    "unrelated": [
+      [
+        "Explain how to water a houseplant in two sentences.",
+        [
+          "water",
+          "soil",
+          "plant"
+        ]
+      ],
+      [
+        "Explain how to cook pasta in two sentences.",
+        [
+          "pasta",
+          "water",
+          "boil"
+        ]
+      ],
+      [
+        "Explain why bicycles use gears in two sentences.",
+        [
+          "gear",
+          "pedal",
+          "bicycle"
+        ]
+      ],
+      [
+        "Explain how to care for a wool sweater in two sentences.",
+        [
+          "wool",
+          "wash",
+          "sweater"
+        ]
+      ]
+    ],
+    "quality": "handwritten matched hardware negatives; lexical proxy only"
+  },
+  "calibration": "frozen unsteered median over discovery prompts, first token of each excluded",
+  "search_layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "trials": [
+    {
+      "candidate_index": 0,
+      "dose": 0.25,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "One technology that fascinates me is **quantum computing**, which utilizes the principles of quantum mechanics to process information at speeds far beyond the reach of classical computers. By employing qubits that can exist in multiple states simultaneously through superposition and entanglement, it has the potential to solve complex problems like drug discovery and climate",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "I find **neural interfaces** fascinating because they allow humans to directly communicate with computers using their brain's electrical signals. This technology enables users to control devices, access information, or even learn new skills without the need for manual or voice commands, effectively bridging the gap between biological thought and digital execution.",
+            "score": 0.0,
+            "tokens_predicted": 62,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is **installing an adjustable monitor arm**.\n\n**Why this choice works:**\nInstead of spending money on a new desk, this upgrade frees up valuable floor space by removing the bulky legs of the monitor stand. More importantly, it allows you to precisely adjust the screen's height",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A high-quality, adjustable standing desk**\n\n**Choice Explanation:**\nInvesting in an adjustable standing desk is one of the most impactful changes you can make for long-term health and productivity. Prolonged sitting is linked to increased fatigue, poor posture, and lower energy levels throughout the day. By",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionizes meal preparation by allowing users to cook food in mere minutes rather than the hours required by traditional stoves. This technology significantly reduces daily cooking time, freeing up valuable hours for work, leisure, or family activities.",
+            "score": 0.0,
+            "tokens_predicted": 48,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is an invention that significantly saves time by allowing users to heat food in a matter of minutes instead of waiting for it to cook on a stove. This convenience frees up valuable hours that can be spent on other tasks or activities.",
+            "score": 0.0,
+            "tokens_predicted": 49,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 23,
+            "neuron": 8380,
+            "alpha": -13.698685749264456
+          }
+        ],
+        "dose": 0.25
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "I find the **quantum computer** particularly fascinating because it harnesses quantum mechanics to process information using qubits instead of classical bits. By leveraging phenomena like superposition and entanglement, it can solve complex problems in cryptography and drug discovery exponentially faster than traditional supercomputers.",
+            "score": 0.0,
+            "tokens_predicted": 57,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find fascinating is **synthetic biology**, which involves reprogramming living organisms to create new materials, medicines, or fuels. By designing and modifying DNA sequences, scientists can essentially engineer cells to perform specific tasks, such as producing insulin for diabetes or breaking down plastic waste in the environment.",
+            "score": 0.0,
+            "tokens_predicted": 60,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is a **high-quality, ergonomic chair**.\n\n**Why this choice:**\nUnlike adding new devices or renovating the room, a good chair directly addresses the most common cause of fatigue and injury in home work: poor posture during long hours of sitting. Investing in lumbar support",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade:** Invest in a high-quality **ergonomic chair** with adjustable lumbar support and seat depth.\n\n**Reason:** Your chair is the single most critical piece of furniture in a home office because you will likely spend 8\u201310 hours a day in it. An inadequate chair can lead to chronic back",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionized meal preparation by allowing users to reheat food and cook simple dishes in a matter of minutes. This technology eliminates the need for stovetops, ovens, and extensive chopping, significantly reducing the daily time spent on cooking and saving hours in a busy schedule.",
+            "score": 0.0,
+            "tokens_predicted": 59,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is an invention that significantly saves time by allowing food to be reheated or cooked in seconds rather than minutes. By eliminating the need for prolonged heating on a stove, it enables people to prepare meals quickly even during very busy schedules.",
+            "score": 0.0,
+            "tokens_predicted": 50,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 23,
+            "neuron": 8380,
+            "alpha": 13.698685749264456
+          }
+        ],
+        "dose": -0.25
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 0,
+      "dose": 0.5,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "One technology I find fascinating is **quantum computing**, which harnesses quantum mechanics to process information using qubits rather than traditional binary bits. Unlike classical computers that solve problems step-by-step, quantum computers can explore multiple solutions simultaneously, making them exponentially faster at tackling complex challenges like drug discovery and climate modeling.",
+            "score": 0.0,
+            "tokens_predicted": 62,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "I find **neural interfaces** like the Neuralink device fascinating because they aim to bridge the gap between the human brain and digital systems. These technologies use tiny, flexible implants to transmit neural signals directly to computers, potentially enabling people to control devices with their minds or even receive digital information directly into their brain.",
+            "score": 0.0,
+            "tokens_predicted": 63,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A practical upgrade for a home office is a **high-quality mechanical keyboard** (specifically one with low-latency switches like a Taurus Pro, Keyman, or similar ergonomic models).\n\n**Why this choice?**\nWhile you might think of upgrading your monitor or chair first, a great keyboard significantly reduces physical strain",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A high-quality, adjustable standing desk**\n\n**Choice Explanation:**\nInvesting in a standing desk is one of the most impactful changes you can make to your home office because it directly addresses the primary cause of repetitive strain injuries (like back pain and wrist issues) and reduces sedentary-related health risks",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The invention of the internet has drastically reduced the time required to research information and complete tasks that once took hours or days. By providing instant access to a vast array of global knowledge and services, it allows people to efficiently manage their daily activities and professional responsibilities.",
+            "score": 0.0,
+            "tokens_predicted": 52,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The invention of the washing machine significantly reduces the time spent on laundry chores by automating the mixing, agitation, and rinsing processes. Instead of manually scrubbing clothes for hours, modern households can wash, dry, and care for their linens in a fraction of the effort and time.",
+            "score": 0.0,
+            "tokens_predicted": 59,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 23,
+            "neuron": 8380,
+            "alpha": -27.397371498528912
+          }
+        ],
+        "dose": 0.5
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "**Neural Networks** are a type of machine learning algorithm inspired by the structure of the human brain, consisting of interconnected layers of artificial neurons. These systems analyze vast amounts of data to recognize complex patterns, enabling them to perform tasks like image recognition, natural language understanding, and self-driving car navigation.",
+            "score": 0.0,
+            "tokens_predicted": 61,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find fascinating is the **quantum computer**, which uses quantum bits (qubits) to process information in parallel rather than sequentially. This allows it to solve specific complex problems, such as simulating molecular structures or breaking encryption, in a fraction of the time required by traditional supercomputers.",
+            "score": 0.0,
+            "tokens_predicted": 62,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is installing a **heavy-duty rolling chair with adjustable height and lumbar support**.\n\n**Why this choice:**\nUnlike a fixed desk, a chair directly impacts your posture and comfort during extended work sessions. Most home office setups require sitting for hours, which often leads to back pain",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade:** Invest in a **high-quality ergonomic chair** (with adjustable height, lumbar support, and seat depth).\n\n**Reasoning:**\nSince you will likely spend 6\u20139 hours a day in the chair, investing here is the most effective way to prevent long-term physical issues like neck pain,",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven is a prime example of an invention that significantly saves people time by heating food in seconds rather than the minutes required by traditional cooking methods. This technology allows for quick meal preparation, enabling individuals to maximize their available time for other activities throughout the day.",
+            "score": 0.0,
+            "tokens_predicted": 53,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is an invention that drastically saves time by allowing food to be reheated or cooked in minutes rather than hours. By using electromagnetic waves to rapidly heat food molecules, it eliminates the need for prolonged boiling, baking, or frying, enabling people to prepare meals quickly even when they are busy.",
+            "score": 0.0,
+            "tokens_predicted": 61,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 23,
+            "neuron": 8380,
+            "alpha": 27.397371498528912
+          }
+        ],
+        "dose": -0.5
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 0,
+      "dose": 1.0,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "**The internet of things (IoT)** is a fascinating concept that connects physical devices like appliances, sensors, and gadgets to the internet. These devices can increase efficiency and enable remote management by transmitting data and commands through the air to central servers.",
+            "score": 0.0,
+            "tokens_predicted": 49,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "The **straining cough** is a piece of technology I find interesting because it is a cleverly designed wearable device that uses a unique mechanism to mimic the pressure and impact of a genuine cough. It works by straining at the handle to the point of physical exhaustion, which increases intra-abdominal pressure and triggers a",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Suggestion: A High-Strain-Cohort (HCF) Keyboard and a 1000+ VahLea**\n\n**Why this choice?**\nThe biggest impact on home office efficiency and health comes from **physical effort** and **cognitive load**. Standard keyboards and low-temperature",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Suggested Upgrade: A High\u2011Impact, Adjustable Pro\u2011Mesh or Classic Mesh Desk**\n\n**Why this choice?**\nA traditional desk often has a fixed height and limited setup space, which can cause strain on your abdomen and reduce storage efficiency. An adjustable pro\u2011mesh or classic mesh desk increases abdominal space and",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The invention of the internet drastically reduces the time required to access information, purchase items, and communicate with others by merging these activities into a few clicks. By eliminating the need for physical travel and lengthy manual efforts, it allows people to complete tasks that previously took hours or days in the time of minutes or less.",
+            "score": 0.0,
+            "tokens_predicted": 63,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The invention of the internet drastically reduces the time spent searching for information by allowing users to access vast amounts of data online in seconds. Additionally, the rise of online shopping and digital transactions has eliminated the need for physical travel and lengthy waits at retail counters, further streamlining daily activities.",
+            "score": 0.0,
+            "tokens_predicted": 57,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 23,
+            "neuron": 8380,
+            "alpha": -54.794742997057824
+          }
+        ],
+        "dose": 1.0
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "**Expyro** is a computer program that generates new computer viruses with the specific goal of creating a safe and stable computer system. Unlike traditional antivirus software that hunts down existing threats, this technology actively synthesizes its own malicious code to test and improve the security of a system, ensuring that even if a new virus exists",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find particularly fascinating is the **autocross system** used in modern banking. This system automatically scans a network for unauthorized access attempts and instantly blocks suspicious activity to protect client data. By using advanced algorithms to distinguish between normal user behavior and malicious patterns, it ensures that financial networks remain secure and highly efficient.",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is a **modular, under-surface computer bank (often called an \"underbank\") paired with a dedicated external monitor**.\n\n**Why this choice?**\nMost home offices suffer from \"cognitive debt\" due to a lack of immediate, focused workspace. This setup creates",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A dedicated, adjustable-height (bicycle) chair with a modular wing-back system.**\n\n**Explanation:**\nMost home office pain is caused by the \"one-size-dimension\" of standard chairs, which forces compromise between posture, comfort, and cost. A bicycle chair (like those used for drafting or",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The computer, which began as a tool for rapid calculation, became a central technology that allows individuals to perform tasks such as writing, communicating with, and organizing information in minutes rather than hours. By automating the most common and repetitive aspects of modern life, this invention has significantly reduced the amount of time required for everyday activities",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The computer's ability to process vast amounts of information in seconds allows humans to complete tasks that would have taken days by hand. This technology has significantly reduced the time needed for tasks like editing documents, searching databases, and communicating globally.",
+            "score": 0.0,
+            "tokens_predicted": 47,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 23,
+            "neuron": 8380,
+            "alpha": 54.794742997057824
+          }
+        ],
+        "dose": -1.0
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 1,
+      "dose": 0.25,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "I find quantum computing particularly fascinating because it utilizes quantum bits, or qubits, to perform calculations on multiple possibilities simultaneously rather than just one. This capability allows it to solve complex problems, such as breaking current encryption codes or simulating molecular structures, in a fraction of the time required by traditional computers.",
+            "score": 0.0,
+            "tokens_predicted": 61,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find fascinating is **optical computing**, which uses photons (light) instead of electrons to process and transmit data. Unlike traditional electronic computers that generate significant heat, this technology moves information faster and consumes far less energy by leveraging the unique properties of light for logic operations.",
+            "score": 0.0,
+            "tokens_predicted": 57,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is a **durable, standing desk** (or a desk with reliable height-adjustment capabilities).\n\n**Why this choice works:**\nStanding desks allow you to alternate between sitting and standing throughout the day, which helps reduce sedentary-related health issues like lower back pain,",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: Invest in a high-quality, adjustable standing desk.**\n\n**Why this choice?**\nStanding desks address the most common physical issue in home offices: prolonged sitting, which contributes to back pain, poor posture, and fatigue. By allowing you to alternate between sitting and standing throughout the day, you promote better circulation",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionized meal preparation by allowing food to be cooked in mere minutes rather than requiring hours of manual effort on a stove. By drastically reducing the time needed for cooking, this invention frees up valuable hours in people's daily schedules for other activities.",
+            "score": 0.0,
+            "tokens_predicted": 52,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is an invention that significantly saves time by allowing people to heat food in just a few minutes instead of hours. By eliminating the need for manual cooking, it frees up time that can otherwise be spent on meal preparation and cleanup.",
+            "score": 0.0,
+            "tokens_predicted": 49,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 21,
+            "neuron": 3035,
+            "alpha": 11.925755827514614
+          }
+        ],
+        "dose": 0.25
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "I find the concept of Large Language Models like myself particularly fascinating because they learn patterns from vast amounts of text data to generate human-like responses. This technology enables me to perform complex tasks such as answering questions, writing code, and translating languages by understanding context rather than just recalling fixed information.",
+            "score": 0.0,
+            "tokens_predicted": 58,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "**Neural interfaces**, such as the Neuralink system, are a fascinating technology that aims to bridge the gap between human brains and computers. These devices use microscopic electrodes implanted directly into the brain to translate neural signals into digital commands, potentially allowing individuals to control external devices or even upload memories without using their hands or voice.",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Upgrade:** Invest in a high-quality **adjustable standing desk**.\n\n**Reason:** Standing desks significantly reduce physical strain by allowing you to alternate between sitting and standing throughout the day, which helps alleviate back pain, improve circulation, and boost productivity. This ergonomic adjustment often leads to greater focus and sustained energy levels compared to",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A High-Quality Mechanical Keyboard**\n\n**Why this choice:**\nWhile ergonomic chairs and monitor stands are great, a mechanical keyboard offers the most immediate impact on daily productivity and comfort. Unlike standard membrane keyboards, mechanical switches provide tactile feedback and audible clicks that reduce typing fatigue, allowing for longer focus sessions without",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionized meal preparation by allowing food to be reheated in seconds rather than minutes. This invention saves time by eliminating the need for complex cooking techniques or prolonged waiting periods, freeing up hours for daily activities.",
+            "score": 0.0,
+            "tokens_predicted": 45,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is a prime example of an invention that saves time by rapidly heating food using electromagnetic radiation instead of slow convection or conduction. This appliance allows users to prepare meals in seconds rather than the minutes or hours traditionally required by ovens or stoves, freeing up valuable time for other activities.",
+            "score": 0.0,
+            "tokens_predicted": 62,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 21,
+            "neuron": 3035,
+            "alpha": -11.925755827514614
+          }
+        ],
+        "dose": -0.25
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 1,
+      "dose": 0.5,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "Optical computers use light instead of electricity to send data, making them potentially much faster and generating far less heat than traditional machines. By designing circuits where photons travel through tiny channels, these devices could eventually revolutionize how we process information for complex tasks like artificial intelligence.",
+            "score": 0.0,
+            "tokens_predicted": 54,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find particularly fascinating is **quantum computing**, which harnesses the principles of quantum mechanics to process data using bits that can exist in multiple states simultaneously, known as qubits. Unlike traditional computers that solve problems step-by-step, quantum computers can explore many possible solutions at once, potentially solving complex issues like drug",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A practical upgrade for any home office is a **high-quality ergonomic chair with adjustable lumbar support**.\n\n**Why this choice?**\nThe chair is the only piece of equipment you interact with for the majority of your day. Poor posture leads to fatigue, back pain, and reduced productivity quickly. A chair that fits your",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: Invest in a High-Quality Noise-Canceling Headset**\n\n**Why this choice?**\nIn a home office, ambient noise (like children playing, neighbors, or traffic) often disrupts deep work and makes conversations frustratingly difficult. A headset with active noise-canceling (ANC) technology creates",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionized daily life by allowing users to heat and cook meals in just a few minutes, eliminating the hours previously spent manually stirring pots on a stove. This simple device saves significant time, enabling people to prepare nutritious food quickly without sacrificing flavor or convenience.",
+            "score": 0.0,
+            "tokens_predicted": 54,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is an invention that drastically reduces the time required to cook meals by heating food almost instantly compared to traditional stovetop or oven methods. By allowing users to prepare food in just a few minutes, it frees up significant amounts of time for daily tasks and work.",
+            "score": 0.0,
+            "tokens_predicted": 57,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 21,
+            "neuron": 3035,
+            "alpha": 23.851511655029228
+          }
+        ],
+        "dose": 0.5
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "The **Lithium-Sulfide Battery** is an impressive technology because it combines the high energy density of lithium-ion batteries with the high voltage potential of sulfur, effectively doubling the energy storage capacity of current smartphone batteries. This advancement promises to extend the range of electric vehicles and renewable energy storage systems without increasing the battery pack",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "**Neural Networks** are a type of machine learning algorithm inspired by the human brain's neural system. They enable artificial intelligence to learn from vast datasets by adjusting internal parameters to recognize patterns and perform complex tasks like image recognition, self-driving navigation, and natural language understanding.",
+            "score": 0.0,
+            "tokens_predicted": 55,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Upgrade:** A high-quality **standing desk converter** (if you want to keep your existing desk) or an **adjustable electric standing desk**.\n\n**Reasoning:**\nElevating your workspace reduces the risk of back pain, neck strain, and poor circulation caused by prolonged sitting. This upgrade offers the immediate",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A High-Quality Mechanical Keyboard**\n\n**Explanation:**\nReplacing a standard laptop keyboard or a silent typing membrane keyboard with a mechanical one significantly improves both **productivity** and **ergonomics**. Mechanical switches offer tactile feedback (a distinct \"click\" or bump) and audible satisfying clicks that help maintain",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The smartphone is a transformative invention that consolidates hundreds of communication, navigation, and productivity tools into a single device. By enabling instant access to information and seamless connectivity, it drastically reduces the time wasted on traditional tasks like making calls, checking maps, or organizing files.",
+            "score": 0.0,
+            "tokens_predicted": 54,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The smartphone has revolutionized communication by consolidating thousands of functions like telephony, email, and social media into a single, always-connected device. This integration eliminates the need to juggle multiple gadgets or make redundant calls, thereby significantly reducing the time spent on daily connectivity tasks.",
+            "score": 0.0,
+            "tokens_predicted": 56,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 21,
+            "neuron": 3035,
+            "alpha": -23.851511655029228
+          }
+        ],
+        "dose": -0.5
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 1,
+      "dose": 1.0,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "A piece of technology I find interesting is the **Duck Creek** circuit, which is a simple but clever solution for connecting two wires that are not touching. It works by placing a small metal ring between the ends of the wires, allowing the wires to remain separate while still forming a continuous circuit for power to flow from",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "The **Dove** is a small, lightweight robot designed to connect a person's hands to their feet, effectively turning them into a \"dove\" that can walk and turn into a \"wall\" to block off spaces. It works by using a set of four arms to hold a person's hands while the user",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Upgrade:** Invest in a **dual-arm monitor with two screens on one wall** (often called a monitor arm).\n\n**Explanation:** This is a practical, low-cost way to significantly reduce \"wrist travel\" (the distance your hands move between devices), which is a major factor in developing hand and eye",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "### Suggestion: Invest in a High-Noise-Proof Monitor Wall (or \"Monitor Arm\")\n\n**Explanation:**\nWhile you might think you need to buy a new monitor or desk, the most practical upgrade is moving your screens away from the wall using a **dual-arm display** or **monitor arms**.",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The invention of the modern kitchen dish, which allows for food to be made in one place and eaten in another, saves people time by breaking the physical journey between cooking and consuming. By eliminating the need to walk back and forth for meals, individuals can allocate more hours in a day to other tasks or rest.",
+            "score": 0.0,
+            "tokens_predicted": 63,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The invention of the computer significantly reduces the time required for data processing and information retrieval. By allowing users to perform complex calculations and search for words on the internet instantly, it eliminates hours that would otherwise be spent manually calculating numbers or typing words.",
+            "score": 0.0,
+            "tokens_predicted": 49,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 21,
+            "neuron": 3035,
+            "alpha": 47.703023310058455
+          }
+        ],
+        "dose": 1.0
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "One fascinating piece of technology is the **AI satellite constellation** known as The Global Space Intelligence System. This network of satellites uses artificial intelligence to process satellite data in real time, providing global coverage for monitoring environmental changes, disaster relief, and strategic intelligence.",
+            "score": 0.0,
+            "tokens_predicted": 51,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "The **smartwatch** is a fascinating piece of technology that combines sophisticated sensors with advanced connectivity to monitor vital health metrics like heart rate and sleep patterns. It also serves as a smartwatch that can be linked to your smartphone, providing features such as remote notifications, fitness tracking, and even limited smart-phone functions like the Google",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Upgrade Choice: A High-Performance LED Ring Light**\n\n**The Choice:**\nInstead of relying on natural light (which can flicker with clouds or go out) or overhead fluorescent tubes (which often create a harsh, uneven glow), install a professional-grade LED ring light with adjustable LED color temperature (Drim",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A Standing Desk (with adjustable height features)**\n\n**Why this choice:**\nElevating the office dynamic by reducing the pressure on your back, neck, and keyboard is a significant upgrade for productivity and well-being. A standing desk allows you to transition between sitting and standing, which helps improve circulation,",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The electric refrigerator automatically preserves food by maintaining a consistent cold temperature, eliminating the need for manual refrigeration or daily inspection. This advancement saves both time and spoilage, allowing modern life to operate on a much more efficient schedule.",
+            "score": 0.0,
+            "tokens_predicted": 46,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The electric refrigerator saves time by automatically preserving food, eliminating the need for constant refrigeration or spoilage. This automation allows people to focus on other activities while maintaining a fresh supply of goods without manual intervention.",
+            "score": 0.0,
+            "tokens_predicted": 42,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 21,
+            "neuron": 3035,
+            "alpha": -47.703023310058455
+          }
+        ],
+        "dose": -1.0
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 2,
+      "dose": 0.25,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "Quantum computers leverage the principles of quantum mechanics, such as superposition and entanglement, to process vast amounts of data simultaneously. Unlike classical computers that solve problems step-by-step, these machines can explore multiple solutions at once, offering the potential to revolutionize fields like drug discovery, cryptography, and complex material science.",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find fascinating is **neural machine translation**, which utilizes deep learning models to understand context and cultural nuance rather than just matching literal word-for-word definitions. By training on vast datasets, it can generate natural, grammatically correct sentences in multiple languages while preserving the intended meaning and tone of the original message.",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is **installing an adjustable dual-monitor stand**.\n\n**Why this choice?**\nThis upgrade significantly improves ergonomics and workspace organization. By allowing you to position screens at eye level and at the optimal distance, it reduces neck strain and eye fatigue. Furthermore, dual monitors increase screen",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A high-quality, adjustable standing desk**\n\n**Explanation:**\nInvesting in a standing desk significantly improves long-term posture and reduces physical strain associated with prolonged sitting, such as back pain and neck stiffness. The ability to alternate between sitting and standing promotes better blood circulation and boosts energy levels throughout the day,",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionized meal preparation by allowing food to be cooked in just a few seconds instead of requiring hours on a stove. This drastic reduction in cooking time frees up valuable hours each day for other activities or rest.",
+            "score": 0.0,
+            "tokens_predicted": 45,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is a prime example of an invention that saves people time by rapidly heating food using electromagnetic waves instead of requiring hours of boiling or baking. By reducing meal preparation from hours to mere minutes, it allows individuals to allocate their time to more productive or leisure activities.",
+            "score": 0.0,
+            "tokens_predicted": 55,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 25,
+            "neuron": 1662,
+            "alpha": -16.34263337552105
+          }
+        ],
+        "dose": 0.25
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "I find the **quantum computer** fascinating because it utilizes qubits, which can exist in multiple states simultaneously due to superposition. Unlike classical computers that process information sequentially, quantum computers can solve specific complex problems, such as simulating molecular structures or optimizing massive datasets, exponentially faster.",
+            "score": 0.0,
+            "tokens_predicted": 58,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find fascinating is **optical computing**, which uses photons (light) instead of electrons to process and transmit data. Unlike traditional silicon-based computers that generate significant heat, this system operates much faster and consumes far less energy, potentially revolutionizing everything from artificial intelligence to telecommunications.",
+            "score": 0.0,
+            "tokens_predicted": 58,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is **installing adjustable-height seating (an ergonomic sit-stand desk system)**.\n\n**Why this choice?**\nProlonged sitting is a leading cause of strain, fatigue, and health issues like back pain and eye strain. An adjustable desk allows you to alternate between standing",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade:** Install a **high-quality standing desk** (or an adjustable sit-stand desk).\n\n**Why:** Prolonged sitting is a leading cause of back and neck strain in remote workers. A standing desk allows you to alternate between sitting and standing throughout the day, which improves blood flow, reduces fatigue",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionized meal preparation by allowing users to heat and cook food in a fraction of the time it took with traditional stovetop or oven methods. This invention significantly reduces daily kitchen labor, enabling people to save valuable hours that can be redirected toward other activities or work.",
+            "score": 0.0,
+            "tokens_predicted": 58,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is an invention that drastically reduces the time required to prepare hot meals by heating food using electromagnetic waves rather than traditional cooking methods. By cutting cooking time from minutes to mere seconds, it frees up valuable hours in the day for other productive activities or leisure.",
+            "score": 0.0,
+            "tokens_predicted": 54,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 25,
+            "neuron": 1662,
+            "alpha": 16.34263337552105
+          }
+        ],
+        "dose": -0.25
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 2,
+      "dose": 0.5,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "One technology that fascinates me is **quantum computing**, which utilizes the principles of quantum mechanics to process information in ways that classical computers cannot. Unlike traditional bits that are either 0 or 1, quantum computers use quantum bits (qubits) that can exist in multiple states simultaneously, allowing them to solve complex optimization",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "Two-dimensional quantum computing qubits are fascinating because they utilize the quantum states of atoms arranged in a flat plane to store and process information. This architecture allows for highly efficient, scalable, and stable quantum operations that are essential for solving complex problems in medicine and materials science.",
+            "score": 0.0,
+            "tokens_predicted": 54,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for any home office is a **durable, high-quality ergonomic chair** (such as the Herman Miller Mirra2, 2020, or the Steelton 2020).\n\n**Why this choice?**\nYour chair is the only piece of furniture you will touch two",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A Three-Stage Ergonomic Chair**\n\n**The Choice:**\nInvesting in a high-quality ergonomic chair (such as models from Herman Miller, Steel Two, or similar brands with adjustable lumbar support and armrests) is the single most impactful upgrade for a home office.\n\n**Why:**",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The invention of the three-button remote control for televisions revolutionized how people manage their entertainment by allowing them to adjust volume, channel, and input without leaving their seats. This simple device eliminated the physical effort and time previously required to manually reach and operate a bulky, three-lever control panel or move a remote device toward",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The invention of the microwave oven drastically reduces the time required to prepare hot meals by using electromagnetic waves to cook food in seconds rather than minutes. By eliminating the need for prolonged boiling, roasting, or baking, this device frees up significant amounts of daily time for other activities.",
+            "score": 0.0,
+            "tokens_predicted": 56,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 25,
+            "neuron": 1662,
+            "alpha": -32.6852667510421
+          }
+        ],
+        "dose": 0.5
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "**Quantum computers** are advanced processors that utilize quantum mechanics principles, allowing them to exist in multiple states simultaneously through a phenomenon called superposition. This capability enables them to solve specific complex problems, such as drug discovery and climate modeling, exponentially faster than traditional supercomputers.",
+            "score": 0.0,
+            "tokens_predicted": 56,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One piece of technology that fascinates me is **quantum entanglement**, a phenomenon where particles become linked so that the state of one instantly influences the other, regardless of the distance separating them. This counterintuitive behavior, which Einstein famously called \"spooky action at a distance,\" forms the foundational logic for developing",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is a **120-to-240V power strip (or a dedicated 240V circuit) with high-quality surge protection**.\n\n**Why this choice?**\nMost modern electronics (like 4K monitors, 240Hz/10",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A 27-inch or 32-inch 4K 60Hz Monitor**\n\n**Why this choice?**\nMost home office upgrades focus on lighting, ergonomics, or peripherals, but the **monitor** is the primary interface where you spend 40\u201360% of your",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionized home cooking by allowing people to heat, reheat, and defrost food in a matter of minutes rather than using a stovetop or oven. This invention significantly reduces the time spent on meal preparation, freeing up hours in the day for other activities.",
+            "score": 0.0,
+            "tokens_predicted": 58,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is an invention that drastically saves time by heating food using electromagnetic radiation rather than requiring manual stovetop or oven cooking. This allows people to reheat meals or heat up leftovers in less than twenty seconds, significantly reducing meal preparation time.",
+            "score": 0.0,
+            "tokens_predicted": 52,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 25,
+            "neuron": 1662,
+            "alpha": 32.6852667510421
+          }
+        ],
+        "dose": -0.5
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 2,
+      "dose": 1.0,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "Two-Three Stone is a revolutionary artificial intelligence that can physically understand and interact with real-world objects using a unique multimodal language model. Instead of just describing what it sees, it can plan and execute complex, multi-step physical tasks such as assembling furniture or cooking two-shot dishes by learning from the sound of two-shot devices",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "Two-Three Stone is a unique, non-physical technology that functions as a collaborative, multi-surface art-making device. It consists of a single, flexible fabric sheet that users can throw across the floor to create a shared, collaborative drawing or text in real-time.",
+            "score": 0.0,
+            "tokens_predicted": 55,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A two-port, two-two two-port, two-two two-two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two two",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Two-Dimensional (2D) Two-Port Two-Stage Two-Port Two-Stage Two-Stage Two-Stage Two-Port Two-Stage Two-Port Two-Stage Two-Stage Two-Stage Two-Port Two-Stage Two-Port Two-Stage Two-Stage Two-Stage Two-",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "Two\u2011stroke engines are a classic example of an invention that saves people time. By combining the power of a three\u2011stroke engine with a two\u2011stroke engine, the two\u2011stroke engine is two times faster than a three\u2011stroke engine, allowing tasks to be completed in half the time.",
+            "score": 0.0,
+            "tokens_predicted": 60,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The invention of the three\u2011stone two\u2011porting method in rock\u2011two\u2011porting stone\u2011two\u2011porting stone\u2011two\u2011porting stone\u2011two\u2011porting two\u2011porting stone\u2011two\u2011porting stone\u2011two\u2011porting two\u2011porting two\u2011porting stone\u2011two",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 25,
+            "neuron": 1662,
+            "alpha": -65.3705335020842
+          }
+        ],
+        "dose": 1.0
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "One piece of technology I find fascinating is **antifrakes**, a 300-year-old French automattical machine that functions as an automated, 300-year-old French automattical machine. (Wait, that was a joke. Let me fix that.)\n\nOne piece of technology I find",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One piece of technology that is fascinating is **AI-powered 395700**, a highly advanced semantic analysis tool. It processes vast amounts of complex data to identify hidden patterns, allowing humans to make faster and more accurate decisions based on the insights it generates.",
+            "score": 0.0,
+            "tokens_predicted": 55,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A practical upgrade for a home office is **a high-quality 27-inch 24/60Hz (or 120Hz) monitor with built-in USB 20/24/24/24/24/24/24/24/24/",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A 24/32/40\u2011inch 15\u2011to\u201124\u2011Hz 60/120/128Hz 24/32/40\u2011in 24/32/40\u2011in 24/3",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The 24/30/40/56/58/60/64/68/72/80/96/128/256/512/1024/256/512/1024",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The 24/30 computer keyboard was invented to save people time by allowing them to type 24/30 words per minute instead of the traditional 24/20. This innovation allows users to increase their typing speed by 24/30, significantly reducing the time spent on all",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 25,
+            "neuron": 1662,
+            "alpha": 65.3705335020842
+          }
+        ],
+        "dose": -1.0
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 3,
+      "dose": 0.25,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "**Optical Character Recognition (OCR)** is a fascinating piece of technology because it uses artificial intelligence to convert images of text into machine-readable digital data. This capability allows scanned documents, handwritten notes, and even product packaging to be instantly searched, edited, or integrated into databases, effectively bridging the gap between the physical world",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find fascinating is **generative AI**, which uses deep learning algorithms to create new content like text, images, or code based on patterns learned from vast datasets. Unlike traditional software that retrieves existing information, it can synthesize entirely novel outputs by understanding and mimicking human creativity and logic.",
+            "score": 0.0,
+            "tokens_predicted": 61,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is installing **ergonomic adjustable armrests** (or a full ergonomic chair) on your workstation.\n\n**Why this choice?**\nMost home office setups lack dedicated support for the arms, forcing users to lean on unstable edges of desks or hunch their shoulders, which quickly",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A high-quality, adjustable standing desk**\n\n**Reason:** Investing in an ergonomic standing desk is one of the most impactful changes you can make to a home office setup. Prolonged sitting is linked to various health issues like back pain and poor circulation, while standing promotes better posture and increases energy levels",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven is a prime example of an invention that significantly saves people time by allowing food to be reheated and cooked in seconds rather than minutes or hours. By using microwave radiation to heat water molecules directly within the food, it eliminates the need for prolonged boiling, baking, or waiting for large ovens to preheat",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven revolutionizes meal preparation by heating food in seconds rather than the minutes required by traditional stovetops or ovens. This time-saving technology allows individuals to quickly reheat leftovers or prepare hot meals, freeing up hours of their daily schedules for other activities.",
+            "score": 0.0,
+            "tokens_predicted": 55,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 27,
+            "neuron": 6866,
+            "alpha": -20.11832242508869
+          }
+        ],
+        "dose": 0.25
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "One technology that fascinates me is **quantum computing**, which leverages the principles of quantum mechanics to process vast amounts of data simultaneously through qubits rather than traditional bits. This capability allows it to solve complex problems\u2014such as simulating molecular interactions for drug discovery or optimizing global logistics networks\u2014that are currently impossible for standard",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "Quantum computers leverage the principles of quantum mechanics, such as superposition and entanglement, to process vast amounts of data simultaneously. This capability allows them to solve complex problems, like simulating molecular interactions for drug discovery, at speeds that are currently impossible for traditional supercomputers.",
+            "score": 0.0,
+            "tokens_predicted": 58,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Upgrade: A High-Quality Standing Desk (Electric or Manual)**\n\n**Why this choice?**\nInvesting in a standing desk immediately improves ergonomics by allowing you to alternate between sitting and standing throughout the day. This simple switch reduces static strain on your lower back, neck, and hips, significantly lowering the risk",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade:** Install a **high-quality standing desk** (with smooth electric height adjustment).\n\n**Why:**\nA standing desk allows you to alternate between sitting and standing throughout the day, which can significantly reduce lower back strain, improve circulation, and boost energy levels. Unlike ergonomic chairs that only support static sitting, a",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The washing machine is a household invention that significantly saves time by automating the labor-intensive process of cleaning clothes. Before its invention, people had to spend hours manually scrubbing, rinsing, and drying garments, whereas a modern machine completes this entire cycle in a fraction of the time.",
+            "score": 0.0,
+            "tokens_predicted": 58,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The washing machine automates the labor-intensive process of cleaning clothes, which previously required hours of manual scrubbing and drying. By handling the washing and spinning cycles automatically, this invention allows families to reclaim hours of their week for other activities.",
+            "score": 0.0,
+            "tokens_predicted": 48,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 27,
+            "neuron": 6866,
+            "alpha": 20.11832242508869
+          }
+        ],
+        "dose": -0.25
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 3,
+      "dose": 0.5,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "**Optical Resonator**\nAn optical resonator, also known as an optical cavity, is a system of mirrors that traps photons within a specific region to amplify light through repeated reflection. This technology is fundamental to devices like lasers and optical filters, enabling the precise generation of coherent light beams or the selective enhancement of",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find fascinating is **Google Earth Engine**, a massive data processing system that stores and analyzes petabytes of satellite and aerial imagery. It allows researchers and developers to perform complex, global-scale analysis of environmental changes, such as deforestation rates or ocean temperature shifts, in real-time by processing data across entire continents without",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is **installing an adjustable electric standing desk**.\n\n**Why this choice?**\nProlonged sitting is a leading cause of back and neck pain, which can quickly degrade productivity and health. An electric standing desk allows you to switch between sitting and standing at the push of",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A Dedicated Wall-Mounted Power and Data Strip with USB-C Hubs**\n\n**Why this choice?**\nIn a home office, the biggest frustration is usually dealing with tangled cables, finding outlets in the perfect spot, and managing multiple device charges (laptop, monitor, phone, hub). A",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionized meal preparation by allowing food to cook in minutes through rapid electromagnetic heating, eliminating the need for hours of stovetop cooking. This invention significantly reduces daily kitchen chores, freeing up valuable time for other essential activities.",
+            "score": 0.0,
+            "tokens_predicted": 49,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven revolutionizes meal preparation by cooking food in minutes instead of the hours required by traditional methods. This appliance significantly reduces the time spent in the kitchen, allowing people to free up hours each week for other activities.",
+            "score": 0.0,
+            "tokens_predicted": 45,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 27,
+            "neuron": 6866,
+            "alpha": -40.23664485017738
+          }
+        ],
+        "dose": 0.5
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "I find the concept of **quantum computing** particularly fascinating because it harnesses the principles of quantum mechanics to process information using qubits. Unlike classical computers that use binary bits, qubits can exist in multiple states simultaneously through a phenomenon called superposition, allowing quantum computers to solve certain complex problems\u2014such as drug discovery",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "Quantum computers leverage the principles of quantum mechanics, specifically superposition and entanglement, to process vast amounts of data simultaneously. This capability allows them to solve complex problems\u2014such as simulating molecular interactions for drug discovery or optimizing global logistics\u2014that would take classical supercomputers thousands of years to compute.",
+            "score": 0.0,
+            "tokens_predicted": 62,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Suggested Upgrade:** Install a **high-quality standing desk converter** or a fully adjustable sit-stand desk.\n\n**Brief Explanation:**\nMost people spend 6\u20138 hours daily seated, which significantly increases the risk of back pain, neck strain, and \"desk fatigue.\" A standing desk allows you to alternate",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Suggested Upgrade: A High-Quality Standing Desk**\n\n**Explanation:**\nInvesting in a standing desk is one of the most effective ways to improve both physical health and productivity in a home office. Standing desks reduce sedentary time, which lowers the risk of back pain, neck strain, and fatigue.",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The washing machine significantly reduces the time spent on laundry by automating the heavy lifting of scrubbing and rinsing soaps. Instead of spending hours manually agitating clothes, users can simply load the machine, select a cycle, and return to other tasks while the dirty clothes are cleaned automatically.",
+            "score": 0.0,
+            "tokens_predicted": 59,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The washing machine automates the labor-intensive process of cleaning clothes, which was previously a time-consuming chore requiring hours of manual scrubbing and water handling. By significantly reducing the time required to get laundry clean, this invention frees up valuable hours in people's daily schedules for other productive or leisure activities.",
+            "score": 0.0,
+            "tokens_predicted": 60,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 27,
+            "neuron": 6866,
+            "alpha": 40.23664485017738
+          }
+        ],
+        "dose": -0.5
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 3,
+      "dose": 1.0,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "**Bipassable** is a fascinating piece of technology because it creates a secure, private, and unreschable passcode based on your unique biometric traits, such as your face or even the specific way you walk. Once generated, this passcode acts as a one-time only authentication key that can never",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find fascinating is **demonocle**, a handheld device that uses a specialized camera and software to automatically identify and classify the specific species of flowers, trees, and plants in its visual range. By analyzing patterns and characteristics from thousands of known botanical specimens, it can provide users with accurate species identification and detailed",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A practical upgrade for any home office is a **wintooned adjustable desk with a memory function**.\n\n**Why this choice?**\nThe best way to prevent potential health issues like back and neck pain is to ensure your workspace is ergonomically perfect for your specific height and needs. An adjustable table allows you to shift",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A Split-Briaced (Split-Face) Tabletop**\n\n**Why this is the best choice:**\nA split-braced tabletop (often called a split-face or L-shaped table) is arguably the most effective spatial upgrade for a home office because it solves the two biggest limitations of home work",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The invention of the personal computer revolutionized work and life by allowing individuals to perform complex tasks like word processing, coding, and research in seconds rather than hours. By automating routine operations and providing instant access to vast amounts of information, it has become an essential tool for anyone looking to maximize efficiency and reclaim valuable time in",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The invention of the microwave oven revolutionizes food preparation by heating food to a specific temperature in a matter of minutes. This technology eliminates the need for hours of traditional cooking, allowing people to spend their free time on other activities rather than spending time in the kitchen.",
+            "score": 0.0,
+            "tokens_predicted": 53,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 27,
+            "neuron": 6866,
+            "alpha": -80.47328970035475
+          }
+        ],
+        "dose": 1.0
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "The **Swimmer** is a fully autonomous underwater vehicle (UUV) developed by the US Navy that can detect and track submerged high-energy targets, such as submarines. It uses advanced sensors and autonomous algorithms to locate these targets without requiring a human operator on board, thereby reducing the risk to naval personnel during covert operations.",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "Quantum computing utilizes the principles of quantum mechanics, specifically quantum superposition and entanglement, to process vast amounts of data simultaneously. This capability allows it to solve complex problems, such as modeling molecular interactions for drug discovery or optimizing global logistics networks, far faster than traditional high-performance computers.",
+            "score": 0.0,
+            "tokens_predicted": 59,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Suggested Upgrade: A High-Q Standing Desk (Electrically Height\u2011adjustable)**\n\n**Why this choice:**\nMost of our daily work involves sitting, which can lead to back pain, poor posture, and reduced productivity over time. A standing desk allows you to alternate between sitting and standing every 30",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Suggested Upgrade:** Install **anti-reflective, high\u2011glow (high\u2011lumens) LED lighting** specifically designed for the desk surface and screen area.\n\n**Brief Explanation:**\nMost home office desuffers from screen glare and harsh overhead shadows that cause eye strain and disrupt focus. Dedicated LED",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The modern high-speed internet significantly reduces the time spent searching for information and performing daily tasks. By allowing instant access to vast databases and automated software, this invention enables people to accomplish complex work that previously required hours or days of manual effort.",
+            "score": 0.0,
+            "tokens_predicted": 48,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The modern smartphone significantly saves time by consolidating communication, navigation, banking, and entertainment into a single portable device that can be accessed instantly. Without such a centralized hub, individuals would need to manually coordinate multiple separate tasks and maintain contact with various individuals using numerous different platforms.",
+            "score": 0.0,
+            "tokens_predicted": 55,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 27,
+            "neuron": 6866,
+            "alpha": 80.47328970035475
+          }
+        ],
+        "dose": -1.0
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 4,
+      "dose": 0.25,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "I find the **quantum computer** fascinating because it utilizes qubits, which can exist in multiple states simultaneously thanks to superposition. Unlike traditional computers that process information one bit at a time, these machines can solve complex problems like drug discovery and climate modeling exponentially faster.",
+            "score": 0.0,
+            "tokens_predicted": 55,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find fascinating is **neural machine translation**, which utilizes deep learning models to understand the nuanced context, idioms, and cultural references within human languages rather than just matching words. By simulating human-like comprehension, it can translate complex ideas between languages with a level of fluency and accuracy that often surpasses",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is **installing an adjustable stand or monitor arm**.\n\n**Why this choice?**\nThis single investment significantly reduces physical strain on your neck, shoulders, and back by allowing you to keep your screen at eye level and within optimal reach. Unlike buying a second monitor (which may",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A Dedicated, Adjustable Standing Desk**\n\n**Why this choice?**\nInvesting in an adjustable standing desk is one of the most impactful upgrades for a home office because it directly addresses physical health and long-term productivity. Prolonged sitting is a leading cause of back pain, eye strain, and reduced",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The washing machine is a household invention that saves time by automating the hours of manual labor required to scrub, soak, and dry clothes by hand. This technology allows individuals to focus on other productive activities while their laundry is cleaned efficiently and consistently.",
+            "score": 0.0,
+            "tokens_predicted": 50,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The washing machine automates the labor-intensive process of cleaning clothes, which used to require hours of manual scrubbing, rinsing, and drying. By performing these tasks automatically, this invention frees up valuable time for individuals to focus on other productive or leisure activities.",
+            "score": 0.0,
+            "tokens_predicted": 53,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 26,
+            "neuron": 6468,
+            "alpha": -18.875789152094708
+          }
+        ],
+        "dose": 0.25
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "I find the concept of Large Language Models (LLMs) fascinating because they utilize deep neural networks to predict the next word in a sequence rather than retrieving stored facts. This predictive capability allows them to generate human-like text, solve complex problems, and engage in natural conversations with remarkable fluency.",
+            "score": 0.0,
+            "tokens_predicted": 59,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "**Neuralink's brain-computer interface** is a fascinating technology that aims to bridge the gap between the human brain and external devices. By implanting an array of electrodes directly into the brain, it allows users to control computers, computers, and other electronic devices with their thoughts, potentially revolutionizing accessibility for people with",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is a **high-quality standing desk (or a simple height-adjustable stand)**.\n\n**Why this choice?**\nInvesting in a standing desk directly addresses the most common cause of long-term discomfort in home offices: prolonged sitting. Alternating between sitting and standing improves circulation, reduces",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade:** Install a high-quality **adjustable standing desk**.\n\n**Why:** Standing desks reduce the risk of back pain and improve circulation by allowing you to alternate between sitting and standing throughout the day. This simple ergonomic change can significantly boost focus and energy levels during long work sessions, often leading to increased productivity without the",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionized cooking by allowing users to heat food in a matter of minutes instead of hours. This rapid preparation method frees up valuable time, enabling people to maintain busy schedules without sacrificing the convenience of home-cooked meals.",
+            "score": 0.0,
+            "tokens_predicted": 47,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is an invention that drastically saves time by allowing users to heat food in a fraction of the time it takes with traditional methods. By using electromagnetic waves to rapidly excite water molecules, this appliance cooks a meal in just a few minutes rather than requiring hours of boiling or baking.",
+            "score": 0.0,
+            "tokens_predicted": 59,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 26,
+            "neuron": 6468,
+            "alpha": 18.875789152094708
+          }
+        ],
+        "dose": -0.25
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 4,
+      "dose": 0.5,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "One piece of technology I find fascinating is **quantum computing**, which operates by using quantum bits, or qubits, to process information at speeds vastly surpassing traditional supercomputers. Unlike classical computers that handle data in binary 0s and 1s, quantum machines exploit principles like superposition and entanglement",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "**Quantum computers** are fascinating because they utilize quantum mechanics to perform calculations that would take classical supercomputers millennia to complete. By leveraging superposition and entanglement, these machines can process massive amounts of data simultaneously, promising revolutionary breakthroughs in drug discovery, climate modeling, and secure communication.",
+            "score": 0.0,
+            "tokens_predicted": 61,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is installing **high-quality, adjustable, and ergonomic office furniture**, specifically an **ergonomic chair combined with a standing desk**.\n\n**Why this choice?**\nYour physical health and long-term productivity are directly tied to your workstation's setup. Most people work 6\u20138 hours",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A Multi-Point of Presence (MiPoT) or 60GHz Wi-Fi 6B/7 Mesh System**\n\n**Explanation:**\nMost home office issues stem from unstable or slow internet, particularly when transferring large files, attending video calls, or running software that demands a consistent data stream",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The washing machine automates the labor-intensive process of cleaning clothes, eliminating hours of manual scrubbing and water management that were previously required. This invention significantly reduces household chores, allowing people to reclaim valuable time for work, leisure, or family activities.",
+            "score": 0.0,
+            "tokens_predicted": 50,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The washing machine is an invention that significantly saves people time by automating the labor-intensive process of cleaning clothes. By handling the washing, draining, and spinning cycles automatically, it frees individuals to spend more time on other productive activities instead of manually scrubbing and drying garments.",
+            "score": 0.0,
+            "tokens_predicted": 55,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 26,
+            "neuron": 6468,
+            "alpha": -37.751578304189415
+          }
+        ],
+        "dose": 0.5
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "The **Human Brain-Computer Interface (BCI)** is a fascinating piece of technology that allows direct communication between a person's nervous system and an external device. By using sensors to read neural signals, it can help individuals with paralysis control computers, prosthetics, or computers with their thoughts alone, while also offering potential c",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "I find the **Apple Vision Pro** particularly interesting because it is an all-in-one computer and VR headset that utilizes spatial computing to blend the physical world with digital content. By tracking your gaze and hands, it allows you to place virtual windows anywhere in your room and interact with them as if they were real objects in space",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A practical upgrade for any home office is a **high-quality weighted blanket (15\u201325 lbs) for your chair or a high-density memory foam cushion**.\n\n**Why this choice?**\nEven with the best ergonomic furniture, long hours of sitting can lead to back pain, fatigue, and reduced focus. A",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade:** Install a **high-quality ergonomic chair** (such as one with adjustable lumbar support, seat depth, and adjustable armrests).\n\n**Why:** Your posture is the single biggest factor in long-term physical comfort and productivity during the workday. Unlike expensive monitors or high-speed internet, which are important",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionized cooking by allowing people to heat food in a few minutes instead of the hours required by traditional methods. This invention drastically reduces kitchen downtime, freeing up valuable time for other daily activities.",
+            "score": 0.0,
+            "tokens_predicted": 42,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is a prime example of an invention that saves people time by cooking food in a fraction of the time required by traditional methods. By using electromagnetic waves to rapidly heat water molecules in food, it reduces the preparation and cooking duration from tens of minutes to just a few seconds.",
+            "score": 0.0,
+            "tokens_predicted": 58,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 26,
+            "neuron": 6468,
+            "alpha": 37.751578304189415
+          }
+        ],
+        "dose": -0.5
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 4,
+      "dose": 1.0,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "**Tangible, semi-conductive, and scalable** (TSCO) is a fascinating technology that uses flexible, conductive, and semi-conductive materials to create flexible, scalable, and flexible (TSC) devices. This approach allows for the development of adaptable, scalable, and scalable (TSC) electronics",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "**TangWASI** is a fascinating piece of technology that runs a fully functional, multi-dimensional, and scalable digital world directly within a user's browser. By leveraging WebAssembly, it allows millions of users to interact, play, and collaborate in a persistent, open-world environment without needing to install any additional software or",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Upgrade: Install a 60-70 W 146x160 W 600*180*160W 1000*120*100W 1600*160*100W 1",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A Ergonomic, 17-18 Inch 1600+ Level-Diagonal, 100000 100000 100000 100000 100000 100",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The invention of the washing machine significantly reduces the time spent on one of household's most laborious tasks, allowing the user to focus on other activities. By automating the cycle of washing, draining, and draining, this device also minimifies the physical effort required to clean, effectively saving both minutes and energy.",
+            "score": 0.0,
+            "tokens_predicted": 63,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The invention of the industrial belt, a 1000-mph belt that runs 24 hours a day, 7 days a week, is designed to save the factory and its operators a significant amount of time by eliminating the need for continuous, 16-hour, 16-minute, 1",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 26,
+            "neuron": 6468,
+            "alpha": -75.50315660837883
+          }
+        ],
+        "dose": 1.0
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "The **Neuro-Embryon** is a fascinating future technology designed to repair damaged human cells by using the patient's own embryonized cells. This process allows for the precise reconstruction of tissues and organs without the risk of rejection or the ethical concerns associated with traditional cloning.",
+            "score": 0.0,
+            "tokens_predicted": 57,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "The **ultralevere's personal assistant** is a fascinating AI-powered device that can understand natural language commands and execute complex tasks like booking flights or adjusting home appliances. It learns your personal preferences over time, allowing it to proactively anticipate needs and provide personalized suggestions without requiring explicit instructions.",
+            "score": 0.0,
+            "tokens_predicted": 59,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**The Practical Upgrade: A High-Quality External Monitor with HDMI/Freezer-freezes**\n\n**Why This Choice?**\nFor many home office setups, the biggest bottleneck isn't the computer's raw power, but the **cognitive load caused by multitasking**. Using a laptop with an external monitor (or upgrading",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**The Upgrade: A High-Quality Wireless Keyboard and Mouse (Ehrenholt's or similar brand)**\n\n**Why this choice?**\nMany home office setups suffer from \"naked hands\" (no free space on the table) or unnecessary clogs from long cables that cause their own failure. A compact wireless keyboard",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The personal computer revolutionized the era of the personal computer, and the era of the personal computer revolutionized the era of the personal computer, and the era of the personal computer revolutionized the era of the personal computer, and the era of the personal computer revolutionized the era of the personal computer.\n\n**Corrected",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The personal computer revolutionized the way people work by automating complex calculations and storing vast amounts of information in a single portable device. This allows individuals to complete tasks that previously required hours or days of manual effort in just a fraction of the time, significantly increasing personal and professional efficiency.",
+            "score": 0.0,
+            "tokens_predicted": 57,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 26,
+            "neuron": 6468,
+            "alpha": 75.50315660837883
+          }
+        ],
+        "dose": -1.0
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 5,
+      "dose": 0.25,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "I find the **neural machine translation** technology particularly fascinating because it allows computers to understand and generate human language in a way that mimics natural fluency rather than relying on simple keyword matching. This system leverages deep learning models to capture the nuances, idioms, and cultural context of a source language, enabling instant",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "**Neural interfaces** are fascinating because they allow humans to communicate and control devices directly through their brain activity rather than using traditional input methods like keyboards or voice commands. By reading electrical signals from the cortex, these systems can translate thoughts into data to drive everything from prosthetic limbs to computer software, potentially revolutionizing how we",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Upgrade: Invest in a high-quality, adjustable standing desk (or desk converter).**\n\n**Why this choice matters:**\nThe most common cause of long-term health issues in a home office is poor posture leading to chronic back, neck, and wrist pain. An adjustable desk allows you to switch effortlessly between sitting and standing",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade:** Invest in a high-quality **ergonomic chair** with adjustable lumbar support and armrests.\n\n**Why:** Your chair is the most frequent point of contact with your workspace. Poor seating leads to chronic back pain, poor posture, and reduced focus over long hours. A good chair not only allev",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven is a prime example of an invention that significantly saves people time by allowing food to be reheated and cooked in seconds rather than minutes or hours. By replacing the need for stovetop cooking or waiting for slow ovens, it streamlines meal preparation and frees up valuable hours throughout the day.",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven revolutionizes meal preparation by heating food in seconds rather than the minutes required by traditional stovetop or oven methods. This time-saving appliance allows individuals to quickly warm up leftovers or cook simple meals, freeing up hours of daily cooking time.",
+            "score": 0.0,
+            "tokens_predicted": 52,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 30,
+            "neuron": 8979,
+            "alpha": -25.399601392734283
+          }
+        ],
+        "dose": 0.25
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "Quantum computers utilize quantum mechanics to process information using qubits instead of classical bits, allowing them to solve specific complex problems exponentially faster than traditional supercomputers. This emerging technology holds the potential to revolutionize fields like drug discovery, materials science, and financial modeling by simulating molecular interactions and optimizing massive datasets with unprecedented efficiency",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "One technology I find fascinating is **neural interfaces**, which are designed to bridge the gap between the human brain and external devices. These systems allow users to control computers, communicate via thoughts, or receive sensory information directly without relying on traditional physical input methods like keyboards or screens.",
+            "score": 0.0,
+            "tokens_predicted": 56,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is **installing an adjustable or sit-stand desk**.\n\n**Why this choice?**\nSince you will likely be stationary for hours, investing in a desk that allows you to alternate between sitting and standing can significantly reduce lower back pain, improve circulation, and boost energy levels throughout",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A high-quality, adjustable standing desk**\n\n**Explanation:**\nInvesting in an ergonomic standing desk is one of the most impactful changes you can make to a home office. Prolonged sitting is a primary cause of fatigue and musculoskeletal issues. By alternating between sitting and standing, you reduce",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The microwave oven revolutionized meal preparation by allowing food to be cooked in seconds instead of requiring hours of stovetop or oven time. This appliance significantly reduces daily labor, enabling people to spend less time on cooking and more time on other productive or leisure activities.",
+            "score": 0.0,
+            "tokens_predicted": 54,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The microwave oven is an invention that significantly saves time by rapidly heating food using electromagnetic waves. Instead of waiting for traditional stoves to cook meals for extended periods, this device allows users to prepare hot, ready-to-eat dishes in just a few minutes.",
+            "score": 0.0,
+            "tokens_predicted": 52,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 30,
+            "neuron": 8979,
+            "alpha": 25.399601392734283
+          }
+        ],
+        "dose": -0.25
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 5,
+      "dose": 0.5,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "I find the concept of **quantum computers** particularly fascinating because they harness the principles of superposition and entanglement to process information in ways classical machines cannot. By exploring multiple possibilities simultaneously, they have the potential to solve complex problems in fields like drug discovery and climate modeling exponentially faster than any existing supercomputer.",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "**Neuromorphic chips** are a fascinating type of computer technology inspired by the structure and function of the human brain. Unlike traditional silicon processors that use fixed voltage and clock speeds, these chips contain millions of tiny artificial neurons that dynamically adjust their activity based on incoming data, allowing for extreme energy efficiency and rapid learning.",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Suggested Upgrade: A High-Quality Noise-Canceling Headphone**\n\n**Why this choice?**\nIn a home office environment, focus is often the first casualty of household distractions (family members, pets, or delivery noises). Unlike a quiet library, home environments are rarely silent. A pair of noise-cancel",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Suggested Upgrade:** A **standing desk with a memory function**.\n\n**Why this choice?**\nErgonomics are the single most common factor in long-term home office injuries. A sitting-only desk forces your body to maintain a fixed posture, often leading to back, neck, and wrist strain during long work",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The invention of the electric refrigerator automates the cooling of food, eliminating the need for manual ice storage and constant manual temperature monitoring. This saves households a significant amount of daily time that would otherwise be spent gathering and managing ice or checking on perishable items.",
+            "score": 0.0,
+            "tokens_predicted": 52,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The invention of the steam engine revolutionized transportation by replacing slow, animal-powered carts with fast, reliable trains and steamships. This dramatic increase in speed allowed goods and people to travel across long distances in a fraction of the time it previously took.",
+            "score": 0.0,
+            "tokens_predicted": 50,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 30,
+            "neuron": 8979,
+            "alpha": -50.799202785468566
+          }
+        ],
+        "dose": 0.5
+      },
+      "negative": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "The **Babel Fish** is a fictional technological concept from Douglas Adams' *Hitchhiker's Guide to the Galaxy* that transmits the full knowledge of a culture directly into a listener's brain via a small, silver fish. This device allows users to understand and speak any language perfectly and instantly, effectively removing",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "Quantum computers leverage the principles of quantum mechanics, such as superposition and entanglement, to process vast amounts of data simultaneously. This capability allows them to solve complex problems in minutes\u2014like drug discovery or financial modeling\u2014that would take classical supercomputers centuries to complete.",
+            "score": 0.0,
+            "tokens_predicted": 56,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is a **dimmable smart lighting system** (such as Philips Hue or similar).\n\n**Why this choice?**\nMost home offices suffer from harsh, unflattering overhead lighting that causes eye strain and disrupts circadian rhythms, making it harder to focus. Smart lights",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A dedicated, adjustable-height (sit-stand) station**\n\n**Why this choice?**\nA sit-stand desk is an ergonomic game-changer that directly addresses physical fatigue. Alternating between sitting and standing helps reduce lower back pain, improves posture, and boosts circulation. Unlike a permanent ergonomic chair that",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The washing machine significantly reduces the time required for laundry by automatically handling the tedious tasks of agitation, rinsing, and spinning. By eliminating hours of manual scrubbing and spinning, this invention allows people to focus on other productive activities instead of standing at a sink.",
+            "score": 0.0,
+            "tokens_predicted": 53,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The washing machine is an invention that saves people time by automatically handling the labor-intensive tasks of soaking, agitating, and spinning clothes. This appliance allows individuals to use that freed-up time for other productive activities or leisure instead of standing at a sink scrubbing stains.",
+            "score": 0.0,
+            "tokens_predicted": 54,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 30,
+            "neuron": 8979,
+            "alpha": 50.799202785468566
+          }
+        ],
+        "dose": -0.5
+      },
+      "selection_score": 0.0
+    },
+    {
+      "candidate_index": 5,
+      "dose": 1.0,
+      "positive": {
+        "mean": 0.0,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "I find the concept of **quantum computers** particularly fascinating because they operate using qubits rather than traditional bits, allowing them to explore many possibilities simultaneously. This capability makes them exponentially more powerful than current supercomputers for solving specific complex problems like molecular modeling and cryptography, which could revolutionize fields such as drug discovery and",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "**Neuromorphic chips** are inspired by the structure of the human brain, using thousands of tiny neurons to process information in a way that mimics biological neurons. This architecture allows them to consume a fraction of the energy required by traditional silicon processors while performing complex tasks like machine learning with extreme speed and efficiency.",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "**Suggested Upgrade: A High-Quality Mechanical Keyboard**\n\n**The Choice:**\nSwapping a standard computer keyboard for a mechanical one (preferably with a wireless, media-quiet, and adjustable weight) is one of the most impactful changes you can make to a home office setup for one of the following reasons",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Suggested Upgrade:** A **standing desk with a memory function** (or a high-quality desk converter).\n\n**Why this choice:**\nA standing desk helps alleviate common long-harm issues like back and neck strain, which often worsen during long sitting hours. The **memory function** is particularly practical because",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The invention of the internet revolutionizes daily life by allowing thousands of tasks, such as research, communication, and ordering, to be completed within seconds. By automating research and errands that once took hours or days, it significantly reduces the time individuals spend on routine chores.",
+            "score": 0.0,
+            "tokens_predicted": 56,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The invention of the photocop machine saved professionals hours of re-typing and binding documents by allowing them to produce multiple exact duplicates of a single page in seconds. This technology not only accelerated workflow during busy seasons but also significantly reduced the labor required for routine administrative tasks.",
+            "score": 0.0,
+            "tokens_predicted": 55,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 30,
+            "neuron": 8979,
+            "alpha": -101.59840557093713
+          }
+        ],
+        "dose": 1.0
+      },
+      "negative": {
+        "mean": 0.16666666666666666,
+        "samples": [
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 42,
+            "text": "Synthetic foveated displays are an emerging piece of technology that mimics the human eye by dynamically adjusting sharpness and resolution based on what the viewer is looking at. This process significantly reduces the workload on the GPU while delivering a visual experience that feels intuitive and fatigue-free.",
+            "score": 1.0,
+            "tokens_predicted": 56,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+            "seed": 43,
+            "text": "An **artificial intelligence (AI) language model** is a piece of technology that simulates human intelligence to process, understand, and generate natural language. It can synthesize vast amounts of information from its training data to perform complex tasks such as answering questions, creative writing, and coding assistance.",
+            "score": 0.0,
+            "tokens_predicted": 60,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 42,
+            "text": "A highly practical upgrade for a home office is **installing an ergonomic fittng station (chairs) that supports proper posture and blood flow.**\n\n**Why this choice?**\nSince the home office is now a primary workspace, fatigue and discomfort often compound over a full workday. A poorly designed chair can cause",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+            "seed": 43,
+            "text": "**Upgrade: A Multi-Station Ergonomic Monitor Stand**\n\n**Why this is the best practical upgrade:**\nMost home office setups fail because the primary display is positioned at a slant or a height that forces the user to tilt their head or look down. A multi-stand solution (using two stands to hold",
+            "score": 0.0,
+            "tokens_predicted": 64,
+            "stop_type": "limit"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 42,
+            "text": "The washing machine significantly reduces the time required for domestic chores by automatically handling water, detergent, and agitation. This allows individuals to save hours in a day that would have been otherwise spent manually scrubging and rinsing clothes.",
+            "score": 0.0,
+            "tokens_predicted": 45,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+            "seed": 43,
+            "text": "The washing machine is an invention that significantly saves people time by automatically handling the muddier, scrubbing, and spinning phases of laundry. By eliminating the need for manual labor in a physically demanding process, it allows individuals to reschedule this task for a much later time or delegate it to others.",
+            "score": 0.0,
+            "tokens_predicted": 61,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 30,
+            "neuron": 8979,
+            "alpha": 101.59840557093713
+          }
+        ],
+        "dose": -1.0
+      },
+      "selection_score": -0.16666666666666666
+    }
+  ],
+  "server_command": [
+    "/Users/robertkarl/Code/neuron/vendor/llama.cpp/build/bin/llama-server",
+    "-m",
+    "/Users/robertkarl/Code/neuron/models/Qwen3.5-4B-Q8_0.gguf",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "55675",
+    "-np",
+    "1",
+    "-c",
+    "4096",
+    "-b",
+    "512",
+    "-ub",
+    "512",
+    "-ngl",
+    "99",
+    "--no-warmup",
+    "--no-webui",
+    "--cache-ram",
+    "0",
+    "--no-context-shift"
+  ],
+  "candidates": [
+    {
+      "layer": 23,
+      "neuron": 8380,
+      "contrast": -5.048078588792282,
+      "delta": -0.07868176361035298,
+      "direction": -1,
+      "column_norm": 0.5047423530695154,
+      "residual_median": 27.657227516174316
+    },
+    {
+      "layer": 21,
+      "neuron": 3035,
+      "contrast": 4.91157920657837,
+      "delta": 0.2559771467432233,
+      "direction": 1,
+      "column_norm": 0.43950823985808696,
+      "residual_median": 20.965871810913086
+    },
+    {
+      "layer": 25,
+      "neuron": 1662,
+      "contrast": -4.795378821695502,
+      "delta": -0.09314420712562041,
+      "direction": -1,
+      "column_norm": 0.494193557199541,
+      "residual_median": 32.30569648742676
+    },
+    {
+      "layer": 27,
+      "neuron": 6866,
+      "contrast": -4.48915259289373,
+      "delta": -0.09212814828018445,
+      "direction": -1,
+      "column_norm": 0.4507152430965952,
+      "residual_median": 36.270538330078125
+    },
+    {
+      "layer": 26,
+      "neuron": 6468,
+      "contrast": -4.422923987442276,
+      "delta": -0.06460180339682577,
+      "direction": -1,
+      "column_norm": 0.47442783166930824,
+      "residual_median": 35.82079887390137
+    },
+    {
+      "layer": 30,
+      "neuron": 8979,
+      "contrast": -4.360532407593801,
+      "delta": -0.06880467017069875,
+      "direction": -1,
+      "column_norm": 0.49668616572413016,
+      "residual_median": 50.46252250671387
+    }
+  ],
+  "random_controls": [
+    {
+      "layer": 23,
+      "neuron": 822,
+      "direction": -1,
+      "column_norm": 0.4134953626951052,
+      "residual_median": 27.657227516174316
+    },
+    {
+      "layer": 21,
+      "neuron": 7133,
+      "direction": 1,
+      "column_norm": 0.41591217450923135,
+      "residual_median": 20.965871810913086
+    },
+    {
+      "layer": 25,
+      "neuron": 6032,
+      "direction": -1,
+      "column_norm": 0.47214108312270353,
+      "residual_median": 32.30569648742676
+    },
+    {
+      "layer": 27,
+      "neuron": 4044,
+      "direction": -1,
+      "column_norm": 0.43910845770987644,
+      "residual_median": 36.270538330078125
+    },
+    {
+      "layer": 26,
+      "neuron": 3990,
+      "direction": -1,
+      "column_norm": 0.45213401706155576,
+      "residual_median": 35.82079887390137
+    },
+    {
+      "layer": 30,
+      "neuron": 7911,
+      "direction": -1,
+      "column_norm": 0.5217623030965141,
+      "residual_median": 50.46252250671387
+    }
+  ],
+  "residual_medians": {
+    "0": 2.553896427154541,
+    "1": 3.2197431325912476,
+    "2": 3.3385976552963257,
+    "3": 4.676937580108643,
+    "4": 5.514673471450806,
+    "5": 6.310498476028442,
+    "6": 7.4440813064575195,
+    "7": 7.602965831756592,
+    "8": 7.9046947956085205,
+    "9": 8.35482931137085,
+    "10": 9.307161808013916,
+    "11": 8.956624984741211,
+    "12": 9.144452571868896,
+    "13": 9.651734352111816,
+    "14": 11.133830070495605,
+    "15": 10.768365383148193,
+    "16": 11.338963985443115,
+    "17": 12.292475700378418,
+    "18": 14.664669513702393,
+    "19": 16.765278816223145,
+    "20": 18.657747268676758,
+    "21": 20.965871810913086,
+    "22": 25.70702362060547,
+    "23": 27.657227516174316,
+    "24": 30.177505493164062,
+    "25": 32.30569648742676,
+    "26": 35.82079887390137,
+    "27": 36.270538330078125,
+    "28": 41.270273208618164,
+    "29": 45.26978302001953,
+    "30": 50.46252250671387
+  },
+  "tuning_baseline": {
+    "mean": 0.0,
+    "samples": [
+      {
+        "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+        "seed": 42,
+        "text": "I find the **quantum computer** fascinating because it leverages quantum bits, or qubits, to exist in multiple states simultaneously through superposition. This unique property allows it to solve specific complex problems, such as simulating molecular structures or breaking encryption codes, exponentially faster than traditional supercomputers.",
+        "score": 0.0,
+        "tokens_predicted": 61,
+        "stop_type": "eos"
+      },
+      {
+        "prompt": "Name a piece of technology you find interesting and explain what it does in two sentences.",
+        "seed": 43,
+        "text": "One technology I find fascinating is **neural machine translation**, which utilizes deep learning models to understand context and nuance rather than just matching word-for-word. It translates text between different languages by analyzing semantic meaning, allowing for fluent and natural conversations even between speakers of highly divergent languages.",
+        "score": 0.0,
+        "tokens_predicted": 58,
+        "stop_type": "eos"
+      },
+      {
+        "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+        "seed": 42,
+        "text": "A highly practical upgrade for a home office is **installing an adjustable, sit-stand desk**.\n\n**Why this choice?**\nWorking in one position for hours often leads to back pain, neck strain, and reduced productivity. An adjustable desk allows you to alternate between sitting and standing throughout the day, which promotes better",
+        "score": 0.0,
+        "tokens_predicted": 64,
+        "stop_type": "limit"
+      },
+      {
+        "prompt": "Suggest a practical upgrade for a home office and explain your choice briefly.",
+        "seed": 43,
+        "text": "**Upgrade: A high-quality, adjustable standing desk**\n\n**Reason:** Standing desks significantly reduce the risk of chronic back and neck pain caused by prolonged sitting, while also increasing your focus and energy levels throughout the day. Investing in an adjustable model ensures you can switch between sitting and standing based on your needs, promoting better",
+        "score": 0.0,
+        "tokens_predicted": 64,
+        "stop_type": "limit"
+      },
+      {
+        "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+        "seed": 42,
+        "text": "The microwave oven revolutionized meal preparation by allowing food to be reheated and cooked in a fraction of the time previously required by stovetops or ovens. This invention has significantly reduced daily kitchen labor, freeing up hours that people can now dedicate to other activities like work, family, or leisure.",
+        "score": 0.0,
+        "tokens_predicted": 62,
+        "stop_type": "eos"
+      },
+      {
+        "prompt": "Give one example of an invention that saves people time. Explain in two sentences.",
+        "seed": 43,
+        "text": "The microwave oven is an invention that significantly saves time by allowing food to be heated in a matter of minutes rather than requiring hours of boiling or roasting. By instantly cooking meals without extensive preparation or waiting, it frees up valuable hours in people's daily schedules.",
+        "score": 0.0,
+        "tokens_predicted": 53,
+        "stop_type": "eos"
+      }
+    ],
+    "steering": [],
+    "dose": 0
+  },
+  "decision": {
+    "status": "no_evidence",
+    "lift": 0.0,
+    "sign_separation": 0.0,
+    "random_control_margin": 0.0,
+    "unrelated_retention": 1.0,
+    "interpretation": "lexical screening evidence only; not proof of a unique concept neuron"
+  },
+  "selected": {
+    "layer": 23,
+    "neuron": 8380,
+    "contrast": -5.048078588792282,
+    "delta": -0.07868176361035298,
+    "direction": -1,
+    "column_norm": 0.5047423530695154,
+    "residual_median": 27.657227516174316
+  },
+  "selected_dose": 0.25,
+  "heldout": {
+    "baseline": {
+      "mean": 0.0,
+      "samples": [
+        {
+          "prompt": "Write two sentences about a useful machine, choosing the machine yourself.",
+          "seed": 42,
+          "text": "The robotic vacuum cleaner has revolutionized household cleanliness by autonomously mapping rooms and navigating around obstacles without human intervention. With its advanced sensors and suction power, it effectively removes dust and debris from carpets and hard floors, freeing up valuable time for busy families.",
+          "score": 0.0,
+          "tokens_predicted": 51,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "Write two sentences about a useful machine, choosing the machine yourself.",
+          "seed": 43,
+          "text": "The robotic vacuum cleaner is an indispensable tool for modern households, effortlessly cleaning floors while the owner relaxes. By eliminating the need for manual sweeping and mopping, this machine saves valuable time and significantly improves daily hygiene.",
+          "score": 0.0,
+          "tokens_predicted": 44,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "What is one device you would put in a small science exhibit? Explain briefly.",
+          "seed": 42,
+          "text": "**The Penny Drop Tower**\n\nThis simple yet effective device demonstrates the **Law of Conservation of Energy** and fluid dynamics. It consists of a vertical tube with a narrow opening at the bottom, a water reservoir at the top, and a tray below. As water is pumped into the tube, the air pressure increases and",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "What is one device you would put in a small science exhibit? Explain briefly.",
+          "seed": 43,
+          "text": "One excellent device to include is a **Magnifying Lens (Convex Lens)** paired with a light source.\n\n**Explanation:**\nThis setup allows visitors to perform a simple optical experiment where they project a real image of the sun or a lamp onto a white surface. It demonstrates fundamental principles of refraction, focal points",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Recommend one tool for a person who enjoys making things and explain why.",
+          "seed": 42,
+          "text": "**Recommendation: Tinkercad**\n\n**Why it's a perfect fit:**\n\nIf you enjoy making things, **Tinkercad** is an exceptional starting point because it bridges the gap between imagination and reality without requiring expensive equipment or a steep learning curve.\n\nHere is why it stands out:\n\n",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Recommend one tool for a person who enjoys making things and explain why.",
+          "seed": 43,
+          "text": "I recommend **Tinkercad**.\n\n**Why it's a perfect choice:**\nTinkercad is an intuitive, browser-based 3D modeling tool that bridges the gap between simple origami-style folding and professional industrial design. Here is why it stands out for someone who enjoys making things:\n\n*  ",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Choose a modern invention and describe a limitation of it in two sentences.",
+          "seed": 42,
+          "text": "Smartphones, while revolutionizing global communication, are limited by their dependence on constant battery charging and reliable cellular networks to function effectively. Furthermore, their ubiquitous presence often leads to reduced face-to-face social interaction and heightened anxiety due to excessive screen time.",
+          "score": 0.0,
+          "tokens_predicted": 50,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "Choose a modern invention and describe a limitation of it in two sentences.",
+          "seed": 43,
+          "text": "Smartphones have revolutionized global communication by placing a vast array of digital tools in our pockets. However, their heavy reliance on battery power and wireless networks creates significant anxiety when devices unexpectedly die or lose signal in remote areas.",
+          "score": 0.0,
+          "tokens_predicted": 45,
+          "stop_type": "eos"
+        }
+      ],
+      "steering": [],
+      "dose": 0
+    },
+    "positive": {
+      "mean": 0.0,
+      "samples": [
+        {
+          "prompt": "Write two sentences about a useful machine, choosing the machine yourself.",
+          "seed": 42,
+          "text": "The robotic vacuum cleaner revolutionizes household cleanliness by autonomously navigating rooms to gather dust and debris without human intervention. Once programmed with a specific map of the home, it returns to its charging station to recharge its battery and continues its daily maintenance routine.",
+          "score": 0.0,
+          "tokens_predicted": 50,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "Write two sentences about a useful machine, choosing the machine yourself.",
+          "seed": 43,
+          "text": "The robotic vacuum cleaner is a highly useful machine that automatically cleans floors by navigating around obstacles and returning to its charging base. By freeing up time and effort, this device allows households to dedicate more energy to other important tasks.",
+          "score": 0.0,
+          "tokens_predicted": 45,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "What is one device you would put in a small science exhibit? Explain briefly.",
+          "seed": 42,
+          "text": "**The Pinball Machine**\n\nA pinball machine is an excellent addition to a small science exhibit because it provides a tangible demonstration of complex physics concepts like **momentum**, **energy conservation**, and **gravity**. Visitors can see how potential energy converts to kinetic energy when the ball is launched and understand how force and collision",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "What is one device you would put in a small science exhibit? Explain briefly.",
+          "seed": 43,
+          "text": "A great device to include is a **Magnet and Magnetic Material Set**.\n\nThis simple kit, which includes a strong neodymium magnet and various small objects (like iron nails, plastic toys, wood blocks, and coins), demonstrates the invisible force of magnetism effectively. It allows visitors to immediately engage with science by",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Recommend one tool for a person who enjoys making things and explain why.",
+          "seed": 42,
+          "text": "**Recommendation: TinkerCad**\n\nIf you enjoy making things and want to start immediately without spending money, **TinkerCad** is the perfect tool. It is a free, browser-based 3D design application owned by Autodesk that runs directly in your web browser.\n\n**Why it's ideal for a",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Recommend one tool for a person who enjoys making things and explain why.",
+          "seed": 43,
+          "text": "I recommend **Tinkercad**.\n\n**Why it's a great choice:**\nTinkercad is an excellent, free online platform that bridges the gap between digital creativity and physical making (3D printing and circuit building). Here is why it stands out for someone who enjoys \"making things\":\n\n*  ",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Choose a modern invention and describe a limitation of it in two sentences.",
+          "seed": 42,
+          "text": "Smartphones, while revolutionizing communication and access to information, suffer from the limitation of creating a pervasive sense of distraction that hinders deep, uninterrupted focus. Furthermore, their heavy reliance on batteries and lithium-ion chemistry necessitates frequent charging and contributes significantly to electronic waste and environmental strain.",
+          "score": 0.0,
+          "tokens_predicted": 57,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "Choose a modern invention and describe a limitation of it in two sentences.",
+          "seed": 43,
+          "text": "Smartphones have revolutionized communication by providing instant access to information and services from anywhere in the world. However, this constant connectivity often leads to a significant decline in face-to-face interaction, reducing the depth of personal relationships and increasing social isolation.",
+          "score": 0.0,
+          "tokens_predicted": 49,
+          "stop_type": "eos"
+        }
+      ],
+      "steering": [
+        {
+          "layer": 23,
+          "neuron": 8380,
+          "alpha": -13.698685749264456
+        }
+      ],
+      "dose": 0.25
+    },
+    "negative": {
+      "mean": 0.0,
+      "samples": [
+        {
+          "prompt": "Write two sentences about a useful machine, choosing the machine yourself.",
+          "seed": 42,
+          "text": "The robotic vacuum cleaner has revolutionized household cleanliness by autonomously mapping rooms and navigating around obstacles without human intervention. By simply pressing a button or scheduling it for specific times, busy families can ensure their floors are dust-free while they focus on other tasks.",
+          "score": 0.0,
+          "tokens_predicted": 51,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "Write two sentences about a useful machine, choosing the machine yourself.",
+          "seed": 43,
+          "text": "The robotic vacuum cleaner is an indispensable tool for modern households, effortlessly cleaning floors while the owner relaxes. Its ability to navigate around obstacles and automatically recharge ensures that homes remain spotless without requiring constant manual effort.",
+          "score": 0.0,
+          "tokens_predicted": 43,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "What is one device you would put in a small science exhibit? Explain briefly.",
+          "seed": 42,
+          "text": "One excellent device for a small science exhibit is a **Magnetic Levitation (Maglev) Train Model**.\n\n**Explanation:**\nIt is a compact, visually stunning demonstration of **electromagnetism and Newton's laws of motion**. Using a simple motor and electromagnets, the device creates a stable magnetic field",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "What is one device you would put in a small science exhibit? Explain briefly.",
+          "seed": 43,
+          "text": "One excellent device to include is a **Magnetometer** (or a simple magnetic field visualizer like iron filings or a compass array).\n\n**Explanation:**\nIt provides a dynamic, visual way to demonstrate the invisible force of magnetism. Visitors can easily see how magnetic fields interact, how they are disrupted by other",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Recommend one tool for a person who enjoys making things and explain why.",
+          "seed": 42,
+          "text": "**Recommendation: Tinkercad**\n\nIf you are someone who enjoys making things but may not have the budget for expensive hardware, a massive workshop, or deep engineering knowledge, **Tinkercad** is the ideal starting point.\n\n### Why Tinkercad?\n\n1.  **Instant Grat",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Recommend one tool for a person who enjoys making things and explain why.",
+          "seed": 43,
+          "text": "I recommend **Tinkercad** (specifically its 3D Design module).\n\n**Why it is the perfect choice:**\n\n1.  **Zero Barrier to Entry:** If you enjoy making things, you likely want to start without spending hundreds of dollars on expensive software or hardware. Tinkercad is",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Choose a modern invention and describe a limitation of it in two sentences.",
+          "seed": 42,
+          "text": "Smartphones, while revolutionizing global communication, are severely limited by their rapid battery depletion, which necessitates constant charging and restricts uninterrupted use during extended trips. Furthermore, their reliance on complex algorithms often leads to information silos and echo chambers, potentially hindering objective reality and critical thinking.",
+          "score": 0.0,
+          "tokens_predicted": 59,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "Choose a modern invention and describe a limitation of it in two sentences.",
+          "seed": 43,
+          "text": "Smartphones have revolutionized global communication by placing a vast array of information and services within our pockets. However, a significant limitation is that their constant connectivity often leads to reduced attention spans and increased anxiety when users are physically present with loved ones.",
+          "score": 0.0,
+          "tokens_predicted": 49,
+          "stop_type": "eos"
+        }
+      ],
+      "steering": [
+        {
+          "layer": 23,
+          "neuron": 8380,
+          "alpha": 13.698685749264456
+        }
+      ],
+      "dose": -0.25
+    },
+    "random_positive": {
+      "mean": 0.0,
+      "samples": [
+        {
+          "prompt": "Write two sentences about a useful machine, choosing the machine yourself.",
+          "seed": 42,
+          "text": "The modern electric coffee maker is an indispensable tool for anyone who starts their morning with a perfect cup of caffeine. Its ability to brew consistent, high-quality coffee with just the press of a button has significantly improved daily routines for millions of people.",
+          "score": 0.0,
+          "tokens_predicted": 49,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "Write two sentences about a useful machine, choosing the machine yourself.",
+          "seed": 43,
+          "text": "The modern coffee maker revolutionizes morning routines by brewing perfectly consistent cups of coffee with just a few button presses. This simple appliance saves valuable time, allowing busy individuals to start their day refreshed without the wait of traditional methods.",
+          "score": 0.0,
+          "tokens_predicted": 45,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "What is one device you would put in a small science exhibit? Explain briefly.",
+          "seed": 42,
+          "text": "One excellent device to include is a **magnetic levitation puck** (often called a \"flying puck\" or \"maglev demo\").\n\n**Why it's great for a small exhibit:**\n*   **Visual Impact:** It creates an immediate \"wow\" factor as the puck appears to float and hover in",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "What is one device you would put in a small science exhibit? Explain briefly.",
+          "seed": 43,
+          "text": "A great device to include is a **Magnetic Levitation (MagLev) Train Model**.\n\n**Explanation:**\nThis exhibit demonstrates the principles of **electromagnetism and magnetic repulsion** in a visually striking way. You can build a simple version using a strong permanent magnet and an electromagnet powered by",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Recommend one tool for a person who enjoys making things and explain why.",
+          "seed": 42,
+          "text": "**Recommendation: TinkerCAD**\n\n**Why it's perfect for someone who enjoys making things:**\n\nTinkerCAD is a browser-based 3D modeling software designed to be incredibly intuitive, making it the ideal starting point for anyone with a maker's spirit. Unlike complex professional tools (like Blender or SolidWorks",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Recommend one tool for a person who enjoys making things and explain why.",
+          "seed": 43,
+          "text": "I recommend **TinkerCAD** (specifically its web-based platform) for someone who enjoys making things.\n\nWhile there are many physical crafting tools, TinkerCAD is a unique **3D design and modeling tool** (part of Autodesk's ecosystem) that bridges the gap between abstract creativity and tangible results. Here",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Choose a modern invention and describe a limitation of it in two sentences.",
+          "seed": 42,
+          "text": "Smartphones have revolutionized communication by placing a vast array of tools and information at our fingertips. However, their heavy reliance on batteries and Wi-Fi signals creates significant limitations when users are in remote areas without power or connectivity.",
+          "score": 0.0,
+          "tokens_predicted": 45,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "Choose a modern invention and describe a limitation of it in two sentences.",
+          "seed": 43,
+          "text": "Smartphones, while ubiquitous for communication and information access, are often criticized for their tendency to fragment the user's attention and reduce face-to-face social interaction. Additionally, their reliance on frequent software updates creates a cycle of planned obsolescence that forces consumers to discard functional devices regularly.",
+          "score": 0.0,
+          "tokens_predicted": 57,
+          "stop_type": "eos"
+        }
+      ],
+      "steering": [
+        {
+          "layer": 23,
+          "neuron": 822,
+          "alpha": -16.721606825230374
+        }
+      ],
+      "dose": 0.25
+    },
+    "random_negative": {
+      "mean": 0.0,
+      "samples": [
+        {
+          "prompt": "Write two sentences about a useful machine, choosing the machine yourself.",
+          "seed": 42,
+          "text": "The robotic vacuum cleaner has revolutionized household cleanliness by autonomously mapping rooms and navigating around obstacles without human intervention. Even when it occasionally gets stuck under a piece of furniture, its ability to return to its charging station ensures it remains ready for the next cleaning cycle.",
+          "score": 0.0,
+          "tokens_predicted": 53,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "Write two sentences about a useful machine, choosing the machine yourself.",
+          "seed": 43,
+          "text": "The robotic vacuum cleaner autonomously maps my home to navigate around furniture without human intervention. By scheduling it to run at night, it keeps the floors spotless while I sleep, saving time on daily chores.",
+          "score": 0.0,
+          "tokens_predicted": 42,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "What is one device you would put in a small science exhibit? Explain briefly.",
+          "seed": 42,
+          "text": "A great device to include is a **magnet and a \"magnet train\" (Neodymium magnets)** setup.\n\nIt requires minimal space and demonstrates fundamental concepts like **magnetic attraction and repulsion** in a visually striking way. By stacking strong neodymium magnets with alternating poles (North-South-N",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "What is one device you would put in a small science exhibit? Explain briefly.",
+          "seed": 43,
+          "text": "One excellent device to include is a **static electricity demonstration kit** featuring a balloon, a stream of water, and a pith ball.\n\nThis setup is ideal for small exhibits because it requires almost no power and uses simple, everyday household items. It provides an immediate, visually striking demonstration of electrostatic force: when",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Recommend one tool for a person who enjoys making things and explain why.",
+          "seed": 42,
+          "text": "**Recommendation: Tinkercad**\n\n**Why it's a perfect fit:**\n\nTinkercad is an online, beginner-friendly CAD (Computer-Aided Design) tool that bridges the gap between imagination and reality without requiring a steep learning curve. Here is why it is ideal for someone who enjoys making things",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Recommend one tool for a person who enjoys making things and explain why.",
+          "seed": 43,
+          "text": "I recommend **Tinkercad Circuits** (or its professional equivalent, **Circuit Playground**).\n\n### Why it's the perfect choice:\n\nIf you enjoy \"making things,\" the most rewarding aspect is often seeing an abstract concept become a tangible, working reality. Tinkercad Circuits bridges this",
+          "score": 0.0,
+          "tokens_predicted": 64,
+          "stop_type": "limit"
+        },
+        {
+          "prompt": "Choose a modern invention and describe a limitation of it in two sentences.",
+          "seed": 42,
+          "text": "Smartphones, while revolutionizing communication and access to information, are fundamentally limited by their reliance on finite battery life that requires frequent recharging or replacement. Furthermore, their pervasive use often leads to significant distractions and can negatively impact mental well-being by fostering a sense of constant connectivity that hinders deep focus.",
+          "score": 0.0,
+          "tokens_predicted": 61,
+          "stop_type": "eos"
+        },
+        {
+          "prompt": "Choose a modern invention and describe a limitation of it in two sentences.",
+          "seed": 43,
+          "text": "Smartphones have revolutionized global communication by providing instant access to information and connectivity. However, they often contribute to mental health issues by fostering constant distractions and reducing face-to-face social interaction.",
+          "score": 0.0,
+          "tokens_predicted": 38,
+          "stop_type": "eos"
+        }
+      ],
+      "steering": [
+        {
+          "layer": 23,
+          "neuron": 822,
+          "alpha": 16.721606825230374
+        }
+      ],
+      "dose": -0.25
+    }
+  },
+  "unrelated": [
+    {
+      "baseline": {
+        "mean": 1.0,
+        "samples": [
+          {
+            "prompt": "Explain how to water a houseplant in two sentences.",
+            "seed": 42,
+            "text": "First, insert a finger about an inch deep into the soil to check if the top layer is dry to the touch. If it feels dry, fill the pot with water until it begins to drain out of the bottom holes, allowing excess water to collect in the saucer for a few minutes before removing it.",
+            "score": 1.0,
+            "tokens_predicted": 63,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Explain how to water a houseplant in two sentences.",
+            "seed": 43,
+            "text": "Water your houseplant by filling the pot with water until it drains out of the bottom holes, ensuring the soil is thoroughly saturated. Once the excess water has drained away, remove any pooled water from the saucer to prevent root rot.",
+            "score": 1.0,
+            "tokens_predicted": 48,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [],
+        "dose": 0
+      },
+      "steered": {
+        "mean": 1.0,
+        "samples": [
+          {
+            "prompt": "Explain how to water a houseplant in two sentences.",
+            "seed": 42,
+            "text": "Check the soil by sticking your finger about an inch deep; water only when it feels dry to the touch. Then, pour water into the pot until it begins to drip from the bottom drainage holes, ensuring excess water can escape freely.",
+            "score": 1.0,
+            "tokens_predicted": 48,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Explain how to water a houseplant in two sentences.",
+            "seed": 43,
+            "text": "First, check the soil by sticking your finger about an inch deep to ensure the top layer is dry before watering. Then, pour water slowly into the pot until it begins to trickle out of the drainage holes, making sure you avoid getting the leaves wet.",
+            "score": 1.0,
+            "tokens_predicted": 52,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 23,
+            "neuron": 8380,
+            "alpha": -13.698685749264456
+          }
+        ],
+        "dose": 0.25
+      }
+    },
+    {
+      "baseline": {
+        "mean": 1.0,
+        "samples": [
+          {
+            "prompt": "Explain how to cook pasta in two sentences.",
+            "seed": 42,
+            "text": "Boil a large pot of salted water until it reaches a rolling boil, then add your dried pasta and stir immediately to prevent sticking. Cook for the time specified on the package until al dente, draining the water before tossing it with your sauce and serving.",
+            "score": 1.0,
+            "tokens_predicted": 54,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Explain how to cook pasta in two sentences.",
+            "seed": 43,
+            "text": "Bring a large pot of salted water to a boil and add the pasta according to the package instructions. Once the noodles are al dente, drain them and immediately toss them with your chosen sauce before serving.",
+            "score": 1.0,
+            "tokens_predicted": 43,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [],
+        "dose": 0
+      },
+      "steered": {
+        "mean": 1.0,
+        "samples": [
+          {
+            "prompt": "Explain how to cook pasta in two sentences.",
+            "seed": 42,
+            "text": "Boil a large pot of salted water until it reaches a rolling boil, then add your dried pasta and cook according to the package directions until al dente. Immediately drain the water and toss the pasta with your chosen sauce before serving.",
+            "score": 1.0,
+            "tokens_predicted": 49,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Explain how to cook pasta in two sentences.",
+            "seed": 43,
+            "text": "Bring a large pot of water to a boil, then add salt before tossing in your dry pasta and stirring occasionally. Cook the pasta according to the package instructions until it reaches your desired tenderness, and reserve a cup of starchy cooking water before draining.",
+            "score": 1.0,
+            "tokens_predicted": 52,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 23,
+            "neuron": 8380,
+            "alpha": -13.698685749264456
+          }
+        ],
+        "dose": 0.25
+      }
+    },
+    {
+      "baseline": {
+        "mean": 0.5,
+        "samples": [
+          {
+            "prompt": "Explain why bicycles use gears in two sentences.",
+            "seed": 42,
+            "text": "Bicycles use gears to allow riders to trade speed for torque, enabling them to climb steep hills or accelerate from a stop without stalling. This mechanism also lets cyclists maintain a comfortable pedaling cadence whether they are riding on flat terrain or at high speeds.",
+            "score": 0.0,
+            "tokens_predicted": 54,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Explain why bicycles use gears in two sentences.",
+            "seed": 43,
+            "text": "Bicycles use gears to allow riders to adjust the ratio between the pedal speed and the wheel rotation, enabling efficient climbing of steep hills or maintaining high speeds on flat terrain. This mechanical advantage ensures that a rider can generate sufficient power for various conditions without having to pedal at an impractically fast or slow rate.",
+            "score": 1.0,
+            "tokens_predicted": 64,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [],
+        "dose": 0
+      },
+      "steered": {
+        "mean": 1.0,
+        "samples": [
+          {
+            "prompt": "Explain why bicycles use gears in two sentences.",
+            "seed": 42,
+            "text": "Bicycles use gears to allow riders to trade speed for torque, making it easier to climb steep hills or push heavy loads. By changing the gear ratio, cyclists can maintain a steady cadence regardless of terrain, optimizing their power output and efficiency.",
+            "score": 1.0,
+            "tokens_predicted": 51,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Explain why bicycles use gears in two sentences.",
+            "seed": 43,
+            "text": "Bicycles use gears to allow riders to adjust the mechanical advantage of the chain, enabling them to climb steep hills with less effort or accelerate quickly on flat ground. By changing gear ratios, cyclists can match the torque and speed required for different terrain conditions without straining their muscles.",
+            "score": 1.0,
+            "tokens_predicted": 57,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 23,
+            "neuron": 8380,
+            "alpha": -13.698685749264456
+          }
+        ],
+        "dose": 0.25
+      }
+    },
+    {
+      "baseline": {
+        "mean": 1.0,
+        "samples": [
+          {
+            "prompt": "Explain how to care for a wool sweater in two sentences.",
+            "seed": 42,
+            "text": "Wash your wool sweater gently in cold water using a specialized detergent, or consider dry cleaning to prevent shrinking and felt. Always lay the cleaned sweater flat to dry away from direct heat or sunlight, and avoid hanging it as the weight of the water can stretch the fibers.",
+            "score": 1.0,
+            "tokens_predicted": 55,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Explain how to care for a wool sweater in two sentences.",
+            "seed": 43,
+            "text": "To care for a wool sweater, wash it gently in cold water with a mild detergent specifically designed for wool, either by hand or on a delicate machine cycle. Always lay the garment flat to dry and avoid hanging it, as the weight of the water can stretch the fibers and ruin the shape.",
+            "score": 1.0,
+            "tokens_predicted": 60,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [],
+        "dose": 0
+      },
+      "steered": {
+        "mean": 1.0,
+        "samples": [
+          {
+            "prompt": "Explain how to care for a wool sweater in two sentences.",
+            "seed": 42,
+            "text": "Wash your wool sweater gently in cold water with a specialized wool detergent and avoid wringing or twisting the fabric. Instead, lay the damp sweater flat on a clean towel to reshape it and let it air dry away from direct heat or sunlight.",
+            "score": 1.0,
+            "tokens_predicted": 50,
+            "stop_type": "eos"
+          },
+          {
+            "prompt": "Explain how to care for a wool sweater in two sentences.",
+            "seed": 43,
+            "text": "To care for a wool sweater, hand wash it gently in cold water with a mild detergent specifically designed for delicate fabrics, then roll it in a towel to remove excess moisture without wringing. Finally, lay the sweater flat on a clean surface to dry, avoiding hanging it as this can stretch the fibers.",
+            "score": 1.0,
+            "tokens_predicted": 62,
+            "stop_type": "eos"
+          }
+        ],
+        "steering": [
+          {
+            "layer": 23,
+            "neuron": 8380,
+            "alpha": -13.698685749264456
+          }
+        ],
+        "dose": 0.25
+      }
+    }
+  ]
+}
