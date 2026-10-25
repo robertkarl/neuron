@@ -1,11 +1,13 @@
-## Code Review: instrumented llama-server and contrastive neuron search
+## Code Review: household implementation and final evidence audit
 
 **Verdict: PASS**
 
-Reviewed `git diff main...HEAD` through `93f7695`, including the project-owned hook, reproducible upstream patch, search logic, and setup. Re-reviewed the setup correction and report provenance additions after the initial review.
+Reviewed implementation through `d1ef9ea` and the uncommitted summary script, registry, saved reports, integration evidence, README/SPEC updates, and registry tests. Earlier reviews covered probability probes, graph callback timing, calibration, candidate selection, fresh confirmation, task-preservation gates, and replay.
 
 ### Findings
 
-No remaining findings meet the review confidence threshold. The previous Python compatibility BLOCK is resolved: documentation and setup require Python >=3.12, and setup explicitly selects Python 3.13 for its virtual environment.
+No remaining correctness findings meet the 80% confidence threshold. Two reporting warnings were corrected and re-reviewed: the summary now distinguishes dimensionless doses from calibrated alpha offsets and accurately states that third confirmation re-evaluates the same fixed random channels. Complete source-snapshot provenance was also clarified.
 
-All eight unit tests pass. No model experiments were started by this review. This code-review verdict does not establish a positive scientific result or substitute for the ongoing real-model experiment.
+All 19 unit tests pass. Independently verified all ten distinct coordinates, signs, calibrated offsets, token mappings, selected minimal doses, acceptance statistics, probability ratios, strongest-competitor margins, free-generation mention counts, and request totals against saved evidence. Integration error bounds match the quoted figures. The model/hook/evidence digests verify. Search-source hashes match the cited implementation commits; the complete minimal-run Python snapshot matches `d1ef9ea` (including the replay module added after `895d475`). Claims distinguish measured token steering from exclusive concept representation and guaranteed free-generation control.
+
+No model experiments were started. Only the review report was edited.

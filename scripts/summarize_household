@@ -1,0 +1,109 @@
+#!/usr/bin/env python3
+"""Save a verified household registry and an auditable local experiment summary."""
+import json
+from pathlib import Path
+import re
+import shutil
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+import numpy as np
+from neuron.backend import ROOT,digest,write_json
+from neuron.household import ITEMS,summarize_effect
+from neuron.refine_household import answer_correct
+
+source=ROOT/'runs/household-minimal-dose/report.json'
+r=json.loads(source.read_text())
+if r['status']!='complete' or r['accepted_count']!=10 or r['items']!=ITEMS:
+    sys.exit('The ten-item confirmation is not complete')
+registry=dict(schema_version=1,model=r['model'],hook_sha256=r['build']['hook'],
+              index_convention='zero-based',normalization=r['calibration'],
+              evidence='docs/experiments/2026-10-25-household-minimal.json',evidence_sha256=digest(source),
+              claim='causal token-selective single-neuron steering; not a monosemantic concept claim',neurons={})
+rows=[]
+examples=[]
+for i,item in enumerate(ITEMS):
+    x=r['results'][item];c=x['coordinate']
+    recalculated=summarize_effect(r['confirmation_baseline'],x['positive'],x['negative'],x['random_values'],i)
+    if recalculated['status']!='accepted_token_steering':
+        sys.exit(f'{item} did not pass recomputed causal criteria')
+    correct=sum(answer_correct(t['text'],t['expected']) for t in x['off_topic'])
+    if correct<3:
+        sys.exit(f'{item} failed task-preservation gate')
+    variants=r['tokenization'][item]
+    if any(len(v)!=1 for v in variants.values()):
+        sys.exit(f'{item} is not single-token')
+    lifts=np.asarray(x['positive'])-np.asarray(r['confirmation_baseline'])
+    ratios=np.exp(lifts[:,i])
+    competitor=float(np.median(lifts[:,i]-np.max(np.delete(lifts,i,axis=1),axis=1)))
+    samples=x['free_generations']
+    hits={key:sum(bool(re.search(r'\b'+re.escape(item)+r's?\b',s[key],re.I)) for s in samples) for key in ['baseline','steered']}
+    entry=dict(layer=c['layer'],neuron=c['neuron'],signed_dose=x['dose']*c['direction'],alpha=x['alpha'],
+               column_norm=c['column_norm'],residual_median=c['residual_median'],bare_token=variants[item][0],space_token=variants[' '+item][0],
+               median_probability_ratio=float(np.median(ratios)),median_logprob_lift=x['median_logprob_lift'],
+               median_strongest_competitor_margin=competitor,random_control_margin=x['random_control_margin'],
+               baseline_probability=x['baseline_probability'],steered_probability=x['steered_probability'],
+               task_correct=correct,task_total=4,free_generation_hits=hits,free_generation_total=len(samples))
+    registry['neurons'][item]=entry
+    rows.append(f"| {item} | {entry['bare_token']} / {entry['space_token']} | {c['layer']} | {c['neuron']} | {entry['signed_dose']:+.3f} | {entry['median_probability_ratio']:.1f}x | {correct}/4 | {hits['baseline']}/8 -> {hits['steered']}/8 |")
+    selected=next((s for s in samples if re.search(r'\b'+re.escape(item)+r's?\b',s['steered'],re.I)),samples[0])
+    examples.append(f"**{item}:** {selected['steered']}" if hits['steered'] else f"**{item}:** No target mention in the eight minimal-dose free-generation samples; the conditional-probability effect still passed confirmation.")
+write_json(ROOT/'data/household-neurons.json',registry)
+experiments=ROOT/'docs/experiments'
+for src,name in [
+    ('runs/household-v2/report.json','2026-10-25-household-discovery.json'),
+    ('runs/household-low-dose/report.json','2026-10-25-household-dose-02.json'),
+    ('runs/household-minimal-dose/report.json','2026-10-25-household-minimal.json'),
+    ('runs/logprob-integration-final/result.json','2026-10-25-probability-integration.json'),
+]:
+    shutil.copyfile(ROOT/src,experiments/name)
+counts={name:sum(1 for _ in (ROOT/'runs'/name/'requests.jsonl').open()) for name in ['household-v2','household-low-dose','household-minimal-dose']}
+text='''# Ten household-token steering neurons, 2026-10-25
+
+**Ten distinct single FFN channels pass the preregistered causal screen at modest doses, and all ten preserve all four held-out task answers.** Each item name is one Qwen3.5-4B token both bare and with a leading space. These are measured token-selective steering effects, not evidence that the neurons exclusively encode the corresponding physical concepts.
+
+Model: the pinned Qwen3.5-4B Q8_0 GGUF, using our instrumented llama-server on Metal. Layer and neuron indices are zero-based. Calibrated offsets (alpha) are added at the pre-down-projection channel on every evaluated input token; signed doses are dimensionless scale factors. The [registry](../../data/household-neurons.json) stores full model identity, exact calibrated offsets, token IDs, and evidence digest.
+
+| Item | Token IDs: bare / space | Layer | Neuron | Signed dose | Median probability ratio | Unrelated tasks | Free mentions: baseline -> steered |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+'''+ '\n'.join(rows)+'''
+
+Probability ratios are medians across ten held-out next-token completion prompts, comparing the leading-space item token against its own unsteered full-vocabulary probability. The probability measurement uses neither logit bias nor a grammar restriction. Each item also passed opposite-sign steering, three independently sampled same-layer random-neuron controls, and competing household-token comparisons. In addition to the preregistered median-competitor test, every item beat the strongest competing household-token lift on median; exact margins are in the registry.
+
+Free-generation mention rates are a separate, weaker diagnostic: four unconstrained prompts, two seeds, 48-token cap. Some minimal doses increase conditional token probability without increasing mentions in this small sample. The probability findings must not be presented as guaranteed free-generation topic control. These samples also do not prove semantic selectivity beyond the measured token contrasts. The word table, for example, can denote furniture or a data structure.
+
+## Search and confirmation
+
+1. Verified tokenization with the running model. Excluded examples such as spoon, whose bare spelling is not a single token.
+2. Ranked normalized down-projection directions against target-minus-competing-item unembedding vectors, using layers 20–31. The ranking only proposed hypotheses.
+3. Tested 16 candidates per item in both signs on three tuning prompts. Refined the best candidate's dose and froze all ten coordinates before first confirmation. All ten showed causal effects, but strong doses damaged free text.
+4. Kept the coordinates fixed and tested doses 0.025, 0.05, 0.075, 0.1, 0.15, 0.2. The highest qualified dose (0.2) preserved tuning tasks but still caused loops for some items.
+5. Preregistered selection of the **smallest** tuning-qualified dose. Confirmed again on ten unused prompts, the same three fixed random channels per item re-evaluated at the new doses, four new task prompts, and four new free-generation prompts. All ten passed. Earlier outcomes remain saved; confirmation results were not used to rank new coordinates or tune per-item thresholds.
+
+The causal acceptance thresholds were median target log-probability lift >=1.5 nats; >=1-nat lift on >=80% of confirmation prompts; median positive-versus-negative separation >=1.5 nats; >=0.5-nat margin over the median competing-item lift and each of three random controls. Minimal-dose selection required >=2-nat median tuning lift, >=1-nat lift on every tuning prompt, >=0.5-nat specificity, and all three tuning tasks correct. Confirmation additionally required at least three of four unrelated tasks correct; observed performance was four of four for every item.
+
+Calibration is frozen from unsteered text. Layers 0–30 use residual norms excluding each prompt's first token. Layer 31 uses the outgoing residual of the selected final token, because upstream crops that layer's prefill computation. This distinction is recorded, not treated as interchangeable with whole-prompt calibration.
+
+The direct probability probe matched native server pairwise log-odds to within 0.00000024 nats. Its small absolute normalization difference (<0.0003 nats in the test) comes from double log-sum-exp versus the native float softmax accumulator. Zero-dose and reset checks are exact, including layer 31. See the [integration result](2026-10-25-probability-integration.json).
+
+## Reproduce
+
+```sh
+.venv/bin/python -m neuron.household --output runs/my-discovery --candidates 16
+.venv/bin/python -m neuron.refine_household \\
+  --source runs/my-discovery/report.json --output runs/my-confirmation
+
+./steer_neuron --item lamp --seed 51 --max-tokens 48 --prompt "Write one brief sentence about a common household object and its function."
+./steer_neuron --item lamp --seed 51 --max-tokens 48 --prompt "Write one brief sentence about a common household object and its function." --baseline
+```
+
+The replay command uses the exact model, hook, and frozen calibration recorded in the registry. Arbitrary prompt distributions may need different doses; effects are not universally guaranteed.
+
+The three full reports preserve candidate trials, prompts, exact probability matrices, signs, controls, task answers, and generated text: [discovery](2026-10-25-household-discovery.json), [dose 0.2](2026-10-25-household-dose-02.json), and [minimal dose](2026-10-25-household-minimal.json). Raw HTTP logs and server logs remain in the corresponding ignored `runs/` directories. The respective search implementations are recorded in commits `a2bcdc7`, `965d863`, and `895d475`, with source-file hashes in each report. The minimal-run complete Python source snapshot matches `d1ef9ea`, which also includes the replay helper; `895d475` identifies its refinement implementation.
+
+## Example generations at minimal doses
+
+These are selected examples for readability; all eight samples per item, including samples that do not mention the item, are in the full report.
+
+'''+ '\n\n'.join(examples)+ '\n\nCompletion request counts: '+', '.join(f'{k}: {v}' for k,v in counts.items())+'.\n'
+(experiments/'2026-10-25-household.md').write_text(text)
+print('Saved ten verified neurons to data/household-neurons.json')

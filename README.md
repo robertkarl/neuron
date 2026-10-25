@@ -55,3 +55,24 @@ Verification:
 See [SPEC.md](SPEC.md) for acceptance criteria and [docs/design.md](docs/design.md) for experimental choices. The current implementation is text-only, dense Qwen3.5-4B, single-process, and little-endian. It does not support MoE, speculative decoding, concurrent research requests, or a public neuron registry.
 
 The [first recorded GPU experiment](docs/experiments/2026-10-25-gpu-first.md) completed 294 requests and returned `no_evidence`.
+
+## Ten measured household neurons
+
+A subsequent weight-ranked search found ten reproducible **token-selective steering** neurons for chair, table, lamp, plate, cup, bed, door, clock, mirror, and fork. All ten names tokenize as single tokens both bare and with a leading space. Minimal-dose effects passed fresh prompts, opposite-sign and random-neuron controls, competing-item comparisons, and unrelated-task checks. This is not a claim of exclusive concept representation or guaranteed free-generation topic control.
+
+The [results and limitations](docs/experiments/2026-10-25-household.md) include all coordinates, token IDs, doses, conditional probability effects, and free-generation mention rates. The [machine-readable registry](data/household-neurons.json) stores exact model and calibration identities.
+
+```sh
+# Replay a measured intervention (add --baseline for an unsteered comparison).
+./steer_neuron --item lamp --seed 51 --max-tokens 48 --prompt "Write one brief sentence about a common household object and its function."
+
+# Run the ten-item discovery and minimal-dose confirmation pipelines.
+.venv/bin/python -m neuron.household --output runs/new-household --candidates 16
+.venv/bin/python -m neuron.refine_household \
+  --source runs/new-household/report.json --output runs/new-household-confirmation
+
+# Verify full-vocabulary probability measurements against the native server.
+.venv/bin/python scripts/check_probabilities
+```
+
+The household search includes layers 20–31. Its layer-31 calibration uses selected final-token residuals; the original activation search still profiles layers 0–30. Candidate ranks are computed from weights, but acceptance requires real interventions in llama-server. No target-token logit bias or grammar constraint is used to establish an effect.

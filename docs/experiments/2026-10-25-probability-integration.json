@@ -1,0 +1,52 @@
+{
+  "status": "pass",
+  "build": {
+    "upstream": "6050b467c07a95c7b87debd4ddac2f8ba8d9b807",
+    "hook": "6e60ef0cac5d0c3f44b5558740af1c3e2824d4bd5e5f76d534f7043736a62863",
+    "patch": "1400655f4d0e46838ed1a97e3c8518c7df75b8124c352cf6fcd83964a310194b",
+    "binaries": {
+      "libllama.0.7.0.dylib": "865aca612379ca89bdecee47afe048f20c0be8b8738c406c8f51881da217caaa",
+      "libmtmd.0.7.0.dylib": "be39640c562cac6fb09276457b37d575855d4e97858832f73a0785035030973c",
+      "libllama-common.0.7.0.dylib": "90a9f6077934dae22f44074983138f34725562164e5a3359d7793a45be307c22",
+      "libllama.0.dylib": "865aca612379ca89bdecee47afe048f20c0be8b8738c406c8f51881da217caaa",
+      "libmtmd.0.dylib": "be39640c562cac6fb09276457b37d575855d4e97858832f73a0785035030973c",
+      "libggml.dylib": "8042bbc415b0ae63fced46ee863b7d6bdc74ad0dc6143622771c8b8ebf0762fe",
+      "libggml.0.dylib": "8042bbc415b0ae63fced46ee863b7d6bdc74ad0dc6143622771c8b8ebf0762fe",
+      "libggml-cpu.0.27.0.dylib": "c6762c367f6a5e00e3dee46552eddd7033ac987afaeb99c12b5ba5d582dbcc6b",
+      "libggml.0.27.0.dylib": "8042bbc415b0ae63fced46ee863b7d6bdc74ad0dc6143622771c8b8ebf0762fe",
+      "libmtmd.dylib": "be39640c562cac6fb09276457b37d575855d4e97858832f73a0785035030973c",
+      "libllama-server-impl.dylib": "6ba409c309ce7cb11919a00d3110aa01012a0d4ccfc51ce028a9f584011c6a33",
+      "libggml-metal.0.27.0.dylib": "2af04f66b97711d43d41c6042657f7fbacadd228078f435899040984dc6bc02c",
+      "libggml-base.dylib": "01d2c2387869f426c28bf82f313dcb81b49b4fffb84acb018c4a67deb62b215b",
+      "libggml-blas.0.27.0.dylib": "3d27745be36a08626aab26ec1a8ca8cabff345cda10736f3ff95ac0511f3f172",
+      "libggml-blas.dylib": "3d27745be36a08626aab26ec1a8ca8cabff345cda10736f3ff95ac0511f3f172",
+      "libggml-metal.0.dylib": "2af04f66b97711d43d41c6042657f7fbacadd228078f435899040984dc6bc02c",
+      "libllama-common.0.dylib": "90a9f6077934dae22f44074983138f34725562164e5a3359d7793a45be307c22",
+      "libllama.dylib": "865aca612379ca89bdecee47afe048f20c0be8b8738c406c8f51881da217caaa",
+      "libggml-cpu.dylib": "c6762c367f6a5e00e3dee46552eddd7033ac987afaeb99c12b5ba5d582dbcc6b",
+      "libggml-base.0.27.0.dylib": "01d2c2387869f426c28bf82f313dcb81b49b4fffb84acb018c4a67deb62b215b",
+      "libggml-metal.dylib": "2af04f66b97711d43d41c6042657f7fbacadd228078f435899040984dc6bc02c",
+      "llama-server": "ecf790a1722554d7b1cb42dbe23cf0d139f91214d5f40303aec3b8381a87fad4",
+      "libllama-common.dylib": "90a9f6077934dae22f44074983138f34725562164e5a3359d7793a45be307c22",
+      "libggml-base.0.dylib": "01d2c2387869f426c28bf82f313dcb81b49b4fffb84acb018c4a67deb62b215b",
+      "libggml-blas.0.dylib": "3d27745be36a08626aab26ec1a8ca8cabff345cda10736f3ff95ac0511f3f172",
+      "libggml-cpu.0.dylib": "c6762c367f6a5e00e3dee46552eddd7033ac987afaeb99c12b5ba5d582dbcc6b"
+    }
+  },
+  "results": [
+    {
+      "prompt": "Name an ordinary household item.",
+      "max_absolute_error": 0.0002843141555786133,
+      "pairwise_log_odds_error": 1.1920928955078125e-07,
+      "final_layer_zero_and_reset_exact": true,
+      "final_layer_nonzero_changes_logits": true
+    },
+    {
+      "prompt": "Complete the sentence about something in a home.",
+      "max_absolute_error": 0.0002536773681640625,
+      "pairwise_log_odds_error": 2.384185791015625e-07,
+      "final_layer_zero_and_reset_exact": true,
+      "final_layer_nonzero_changes_logits": true
+    }
+  ]
+}
