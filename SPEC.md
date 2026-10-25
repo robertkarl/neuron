@@ -39,3 +39,12 @@ Verified in docs/experiments/2026-10-25-gpu-first.md. Software acceptance is com
 - [x] Among the same tuning-qualified doses, choose the smallest magnitude, rather than maximizing log-probability lift. Retain coordinates and thresholds. Confirm on another ten unused prompts, four unused task prompts, and four unused free-generation prompts. This addresses looping observed at dose 0.2; previous runs and their failures remain saved.
 
 Ten-item results, preregistered refinements, limitations, and complete evidence: docs/experiments/2026-10-25-household.md and data/household-neurons.json.
+
+## Spec, 2026-10-25, quoted two-neuron steering in tmux
+
+**Goal:** Run the project-owned llama-server persistently in a dedicated tmux session with zero-based L14 N8949 dose +1 and L13 N7956 dose -1, following the supplied normalization formula. The tweet does not specify calibration inputs; use and record frozen unsteered medians from four neutral prompts. Behavioral replication remains an empirical question.
+
+- [ ] Verify model/build identities, record calibration prompts and per-layer medians, dequantized column norms, and resulting offsets.
+- [ ] Test both interventions together on actual prefill and decode tokens, saving matched baseline/steered samples without an injected persona.
+- [ ] Launch a dedicated tmux session without altering existing sessions; provide server logs, interactive chat, and a localhost API/UI. Verify the persistent server applies both offsets.
+- [ ] Save reproducible launch commands and report limitations; commit setup and evidence in batches.
