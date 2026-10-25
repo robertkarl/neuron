@@ -46,3 +46,11 @@ Full calibration data, matched samples, the persistent API response, interventio
 The launcher recalibrates, runs matched probes, verifies both interventions, and starts a new tmux server/chat session. It refuses to replace an existing session or bind an occupied port. Use distinct session names and ports for additional instances.
 
 All 21 automated tests pass, and fresh-context code review passes. The running instrumented llama-server is kept alive intentionally.
+
+## Follow-up: interactive looping observed
+
+The user reported looping after the initial launch. The live server log records one request with 338 prompt tokens and 3,758 generated tokens, ending at the 4,096-token context limit (`truncated = 1`). The earlier short probes established that both offsets were applied and behavior changed; they did not establish stable multi-turn conversation or a faithful replication of the original tweet's unspecified calibration procedure.
+
+The running configuration applies fixed offsets +23.07792937274957 and -22.31020345460078 at every evaluated token. These offsets may oversteer some contexts; that is a hypothesis, not a demonstrated root cause. The terminal client requests at most 256 tokens, but the persistent server was launched without a default `--n-predict` bound, and web/API clients can request longer generations. No special repetition penalty was configured. An output limit would bound the failure, not by itself solve degeneration.
+
+The live session was left unchanged while preparing the GitHub upload so the failure remained inspectable. No new behavioral success claim is made. Further reproduction should compare lower doses, calibration scopes, prompt formatting/thinking settings, and longer conversations against baseline.

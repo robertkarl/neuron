@@ -87,3 +87,5 @@ The household search includes layers 20–31. Its layer-31 calibration uses sele
 ```
 
 This applies L14 N8949 dose +1 and L13 N7956 dose -1 at every evaluated token. It measures and freezes unsteered calibration scales before launch, leaves model weights unchanged, and adds no persona prompt. The [reproduction report](docs/experiments/2026-10-25-tweet-repro.md) records the exact offsets, calibration interpretation, matched behavior samples, and controls for the tmux session. Choose a different `--session` and `--port` to start another instance.
+
+The tweet setup subsequently exhibited interactive looping. See the [failure follow-up](docs/experiments/2026-10-25-tweet-repro.md) and [change walkthrough](docs/DIFF.md); the initial short probes did not establish stable conversational behavior.
