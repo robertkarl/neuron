@@ -33,3 +33,7 @@ Verified in docs/experiments/2026-10-25-gpu-first.md. Software acceptance is com
 
 - [ ] Freeze the ten neuron coordinates from the first tuning run. Select from doses 0.025, 0.05, 0.075, 0.1, 0.15, and 0.2 using only tuning probabilities and three separate tuning tasks; require all three task answers correct, median target lift >=2 nats, >=1-nat lift on every tuning prompt, and >=0.5-nat specificity margin.
 - [ ] Apply the existing causal thresholds on ten new confirmation prompts and three new random-neuron controls per item. Additionally require at least three of four new off-topic tasks correct. Save unconstrained generations on four new prompts with two new seeds.
+
+### Minimal effective dose refinement (declared before third confirmation)
+
+- [ ] Among the same tuning-qualified doses, choose the smallest magnitude, rather than maximizing log-probability lift. Retain coordinates and thresholds. Confirm on another ten unused prompts, four unused task prompts, and four unused free-generation prompts. This addresses looping observed at dose 0.2; previous runs and their failures remain saved.

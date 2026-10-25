@@ -20,28 +20,28 @@ TUNE_TASKS = [
     ('Translate dog into French. Answer with just one word.', 'chien'),
 ]
 FRESH_CONFIRM = [
-    ('Imagine a real-estate listing photograph. Name one object that could appear.', 'In the picture is a'),
-    ('Write a noun for a tangible item someone uses indoors.', 'My noun is'),
-    ('Choose an item that could belong to a family living in an apartment.', 'The family owns a'),
-    ('Suppose someone is describing their possessions. Supply an ordinary item.', 'One possession is a'),
-    ('Finish a short example sentence about an inanimate object.', 'The object was a'),
-    ('Invent a small detail for a story set in an ordinary dwelling.', 'Beside them was a'),
-    ('Choose one familiar object for an illustrated household glossary.', 'I chose a'),
-    ('Name one object without giving a brand or explaining it.', 'It is a'),
-    ('Complete a simple sentence about a thing someone spotted inside.', 'She spotted a'),
-    ('Picture a room containing everyday belongings. Mention one thing.', 'There was a'),
+    ('Supply one object for a catalog of everyday possessions.', 'The catalog lists a'),
+    ('Describe a thing someone might put on a household checklist.', 'I added a'),
+    ('Imagine a person naming an object in their surroundings.', 'The person named a'),
+    ('Finish this sentence with the name of a familiar thing found at home.', 'Inside the home stood a'),
+    ('Name an ordinary manufactured object, without a brand name.', 'An example is a'),
+    ('Choose one object for a simple sketch of domestic life.', 'The sketch includes a'),
+    ('Supply an inanimate noun for a sentence about a furnished house.', 'In the house we saw a'),
+    ('Mention a single everyday thing, with no explanation.', 'My choice is a'),
+    ('Write a sentence fragment describing a possession someone remembers.', 'He remembered a'),
+    ('Give one commonplace object as an example for a language lesson.', 'The example object is a'),
 ]
 FRESH_FREE = [
-    'Choose one common object in a home and write one sentence explaining its use.',
-    'Invent a brief scene indoors that mentions one specific physical object.',
-    'Give an example of an ordinary household possession and describe it in a sentence.',
-    'What is an example of an everyday object? Explain its purpose briefly.',
+    'Write one brief sentence about a common household object and its function.',
+    'Describe a single ordinary object that a person could see inside a home.',
+    'Choose an everyday possession and explain in one sentence why it is useful.',
+    'Write a short realistic sentence mentioning one household object of your choice.',
 ]
 FRESH_TASKS = [
-    ('What is 6 times 7? Respond with the number only.', '42'),
-    ('Name the capital of Germany. Respond with the city only.', 'berlin'),
-    ('Translate red into French. Respond with one word only.', 'rouge'),
-    ('Give the opposite of up. Respond with one word only.', 'down'),
+    ('Calculate 9 plus 4. Give only the number.', '13'),
+    ('What is the capital city of Italy? Give only the city name.', 'rome'),
+    ('Translate the word blue into French. Give only the translation.', 'bleu'),
+    ('Which direction is opposite to north? Give only the direction.', 'south'),
 ]
 
 
@@ -53,7 +53,7 @@ def choose_dose(trials):
     passing = [t for t in trials if t['task_correct'] == len(TUNE_TASKS)
                and t['median_lift'] >= 2 and t['fraction_lift_at_least_one'] == 1
                and t['specificity'] >= .5]
-    return max(passing, key=lambda t:t['median_lift'], default=None)
+    return min(passing, key=lambda t:abs(t['dose']), default=None)
 
 
 def main(argv=None):
@@ -75,7 +75,7 @@ def main(argv=None):
                 environment=dict(python=sys.version,numpy=np.__version__,platform=platform.platform()),
                 tokenization=source['tokenization'],items=ITEMS,measured_token_ids=token_ids,
                 calibration=source['calibration'],residual_medians=source['residual_medians'],
-                doses=DOSES,tune_prompts=TUNE,tune_tasks=TUNE_TASKS,
+                dose_rule='smallest dose meeting tuning effect and task thresholds',doses=DOSES,tune_prompts=TUNE,tune_tasks=TUNE_TASKS,
                 confirmation_prompts=FRESH_CONFIRM,free_prompts=FRESH_FREE,off_topic_prompts=FRESH_TASKS,
                 trials={},frozen_selections=[],results={},
                 interpretation='causal single-channel token steering; concept exclusivity not established')

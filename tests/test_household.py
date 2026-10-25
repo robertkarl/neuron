@@ -70,7 +70,8 @@ class DoseRefinementTests(unittest.TestCase):
         safe=dict(dose=.1,task_correct=3,median_lift=3.,fraction_lift_at_least_one=1.,specificity=1.)
         damaged={**safe,'dose':.2,'task_correct':2,'median_lift':6.}
         weak={**safe,'dose':.025,'median_lift':1.}
-        self.assertEqual(choose_dose([safe,damaged,weak]),safe)
+        larger_safe={**safe,'dose':.15,'median_lift':4.}
+        self.assertEqual(choose_dose([safe,damaged,weak,larger_safe]),safe)
         self.assertIsNone(choose_dose([damaged,weak]))
 
     def test_second_confirmation_is_fresh(self):
