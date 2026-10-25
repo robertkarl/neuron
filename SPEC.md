@@ -28,3 +28,8 @@ Verified in docs/experiments/2026-10-25-gpu-first.md. Software acceptance is com
 - [ ] Freeze candidate/dose selection before confirmation. Require target log-probability lift of at least 1 nat on at least 80% of held-out neutral prompts, median lift >= 1.5 nats, median lift at least 0.5 nats above the median competing-item lift, and median lift at least 0.5 nats above each of three same-layer random controls. Save failures as well as successes.
 - [ ] Record unconstrained generation examples and off-topic task checks for every accepted item, reporting limitations rather than equating token bias with semantic understanding.
 - [ ] Add tests for targeted probability extraction and acceptance rules, verify against native server probabilities, run /codereview, and commit implementation and evidence in batches.
+
+### Low-dose confirmation refinement (declared before the second confirmation run)
+
+- [ ] Freeze the ten neuron coordinates from the first tuning run. Select from doses 0.025, 0.05, 0.075, 0.1, 0.15, and 0.2 using only tuning probabilities and three separate tuning tasks; require all three task answers correct, median target lift >=2 nats, >=1-nat lift on every tuning prompt, and >=0.5-nat specificity margin.
+- [ ] Apply the existing causal thresholds on ten new confirmation prompts and three new random-neuron controls per item. Additionally require at least three of four new off-topic tasks correct. Save unconstrained generations on four new prompts with two new seeds.

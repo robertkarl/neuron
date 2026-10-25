@@ -63,3 +63,19 @@ class CausalScreenTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+class DoseRefinementTests(unittest.TestCase):
+    def test_damage_and_weak_effect_are_disqualified(self):
+        from neuron.refine_household import choose_dose
+        safe=dict(dose=.1,task_correct=3,median_lift=3.,fraction_lift_at_least_one=1.,specificity=1.)
+        damaged={**safe,'dose':.2,'task_correct':2,'median_lift':6.}
+        weak={**safe,'dose':.025,'median_lift':1.}
+        self.assertEqual(choose_dose([safe,damaged,weak]),safe)
+        self.assertIsNone(choose_dose([damaged,weak]))
+
+    def test_second_confirmation_is_fresh(self):
+        from neuron.refine_household import FRESH_CONFIRM, FRESH_FREE, FRESH_TASKS, TUNE_TASKS
+        old={x[0] for x in TUNE+CONFIRM+OFF_TOPIC}|set(CALIBRATION)|set(FREE)
+        new={x[0] for x in FRESH_CONFIRM+FRESH_TASKS}|set(FRESH_FREE)
+        self.assertFalse(old&new)
+        self.assertFalse({x[0] for x in TUNE_TASKS}&new)
