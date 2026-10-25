@@ -24,6 +24,9 @@ patch = str(ROOT / 'patches/llama-server-neuron.patch')
 if subprocess.run(['git', '-C', str(source), 'apply', '--reverse', '--check', patch], capture_output=True).returncode:
     run('git', '-C', str(source), 'apply', '--check', patch)
     run('git', '-C', str(source), 'apply', patch)
+actual_diff = subprocess.check_output(['git', '-C', str(source), 'diff', 'HEAD', '--'], text=True)
+if actual_diff != Path(patch).read_text():
+    sys.exit('Unexpected local llama.cpp changes; inspect before rebuilding')
 shutil.copyfile(ROOT / 'backend/neuron-hook.h', source / 'tools/server/neuron-hook.h')
 run('uv', 'venv', '--allow-existing', '.venv')
 run('uv', 'pip', 'install', 'numpy==2.5.4', './vendor/llama.cpp/gguf-py')

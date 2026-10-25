@@ -24,6 +24,26 @@ def digest(path):
     return h.hexdigest()
 
 
+def verify_build():
+    source = ROOT / 'vendor/llama.cpp'
+    manifest_path = source / 'build/neuron-build.json'
+    if not manifest_path.exists():
+        raise RuntimeError('build manifest missing; run scripts/setup')
+    manifest = json.loads(manifest_path.read_text())
+    for key, file in [('hook', 'backend/neuron-hook.h'), ('patch', 'patches/llama-server-neuron.patch')]:
+        if manifest[key] != digest(ROOT / file):
+            raise RuntimeError('instrumentation changed since build; run scripts/setup')
+    if manifest['hook'] != digest(source / 'tools/server/neuron-hook.h'):
+        raise RuntimeError('installed hook differs from source; run scripts/setup')
+    actual_diff = subprocess.check_output(['git', '-C', str(source), 'diff', 'HEAD', '--'], text=True)
+    if actual_diff != (ROOT / 'patches/llama-server-neuron.patch').read_text():
+        raise RuntimeError('llama.cpp has unexpected local changes')
+    for name, expected in manifest['binaries'].items():
+        if digest(source / 'build/bin' / name) != expected:
+            raise RuntimeError('server binary changed since build; run scripts/setup')
+    return manifest
+
+
 def write_json(path, value):
     path = Path(path)
     temp = path.with_suffix(path.suffix + '.tmp')
