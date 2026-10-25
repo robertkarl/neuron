@@ -44,7 +44,9 @@ Ten-item results, preregistered refinements, limitations, and complete evidence:
 
 **Goal:** Run the project-owned llama-server persistently in a dedicated tmux session with zero-based L14 N8949 dose +1 and L13 N7956 dose -1, following the supplied normalization formula. The tweet does not specify calibration inputs; use and record frozen unsteered medians from four neutral prompts. Behavioral replication remains an empirical question.
 
-- [ ] Verify model/build identities, record calibration prompts and per-layer medians, dequantized column norms, and resulting offsets.
-- [ ] Test both interventions together on actual prefill and decode tokens, saving matched baseline/steered samples without an injected persona.
-- [ ] Launch a dedicated tmux session without altering existing sessions; provide server logs, interactive chat, and a localhost API/UI. Verify the persistent server applies both offsets.
-- [ ] Save reproducible launch commands and report limitations; commit setup and evidence in batches.
+- [x] Verify model/build identities, record calibration prompts and per-layer medians, dequantized column norms, and resulting offsets.
+- [x] Test both interventions together on actual prefill and decode tokens, saving matched baseline/steered samples without an injected persona.
+- [x] Launch a dedicated tmux session without altering existing sessions; provide server logs, interactive chat, and a localhost API/UI. Verify the persistent server applies both offsets.
+- [x] Save reproducible launch commands and report limitations; commit setup and evidence in batches.
+
+Quoted-recipe launch and matched samples: docs/experiments/2026-10-25-tweet-repro.md.

@@ -76,3 +76,14 @@ The [results and limitations](docs/experiments/2026-10-25-household.md) include 
 ```
 
 The household search includes layers 20–31. Its layer-31 calibration uses selected final-token residuals; the original activation search still profiles layers 0–30. Candidate ranks are computed from weights, but acceptance requires real interventions in llama-server. No target-token logit bias or grammar constraint is used to establish an effect.
+
+
+## Quoted L14/L13 recipe in tmux
+
+```sh
+./run_tweet_repro
+# Launches tmux session qwen-steering with server and interactive chat windows.
+# Browser UI: http://127.0.0.1:8094
+```
+
+This applies L14 N8949 dose +1 and L13 N7956 dose -1 at every evaluated token. It measures and freezes unsteered calibration scales before launch, leaves model weights unchanged, and adds no persona prompt. The [reproduction report](docs/experiments/2026-10-25-tweet-repro.md) records the exact offsets, calibration interpretation, matched behavior samples, and controls for the tmux session. Choose a different `--session` and `--port` to start another instance.
